@@ -17,7 +17,7 @@ const NavbarStart = () => {
 };
 
 const NavbarCenter = () => {
-  return <div>center</div>;
+  return <div></div>;
 };
 
 const NavbarEnd = () => {
