@@ -3,11 +3,17 @@ import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
-    <div className="app-container">
+    <div style={appContainerStyle}>
       <Navbar />
       <ContentContainer />
     </div>
   );
 }
+
+const appContainerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  height: "100vh",
+};
 
 export default App;
