@@ -1,5 +1,5 @@
 export const ContentContainer = () => {
-  return <div>Content</div>;
+  return <div style={contentContainerSyle}>Content</div>;
 };
 
 const contentContainerSyle = {};

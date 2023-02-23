@@ -1,8 +1,38 @@
 export const Navbar = () => {
-  return <div style={navbarStyle}>navbar</div>;
+  return (
+    <div style={mainNavbar}>
+      <NavbarStart />
+      <NavbarCenter />
+      <NavbarEnd />
+    </div>
+  );
 };
 
-const navbarStyle = {
-  height: "10vh",
-  backgroundColor: "aquamarine",
+const NavbarStart = () => {
+  return (
+    <div style={logoContainer}>
+      <h1 style={logo}>BGN LOGO</h1>
+    </div>
+  );
 };
+
+const NavbarCenter = () => {
+  return <div>center</div>;
+};
+
+const NavbarEnd = () => {
+  return <div>end</div>;
+};
+
+const mainNavbar = {
+  backgroundColor: "aquamarine",
+  display: "flex",
+  height: "fit-content",
+  justifyContent: "space-between",
+};
+
+const logoContainer = {
+  marginLeft: "10px",
+};
+
+const logo = {};
