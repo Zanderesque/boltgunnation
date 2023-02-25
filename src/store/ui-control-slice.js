@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const HOME = 1;
-const RULES = 2;
 
 const uiControlSlice = createSlice({
     name: 'uiControl',
