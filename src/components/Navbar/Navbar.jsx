@@ -47,6 +47,7 @@ const NavbarEnd = () => {
             <Dropdown.Menu>
                 <Dropdown.Item onClick={() => setNewPage(1)}>Home</Dropdown.Item>
                 <Dropdown.Item onClick={() => setNewPage(2)}>Range Safety Rules</Dropdown.Item>
+                <Dropdown.Item onClick={() => setNewPage(3)}>Bolt Gun Race</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );

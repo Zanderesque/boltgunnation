@@ -29,3 +29,12 @@ code {
 .dropdown-button {
     background-color: aqua;
 }
+
+.points-table {
+    height: 40vh;
+    width: 80vw;
+    background-image: url(../assets/pointsTable.png);
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
