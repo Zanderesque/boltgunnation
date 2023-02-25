@@ -1,8 +1,9 @@
 import React from 'react';
+import {} from '../../assets/vortex.JPG';
 
 export const Home = () => {
     return (
-        <div style={home}>
+        <div style={home} className="home">
             <h1>Welcome to Bolt Gun Nation</h1>
         </div>
     );
@@ -11,6 +12,6 @@ export const Home = () => {
 const home = {
     display: 'Flex',
     flexDirection: 'column',
-    height: '100%',
+    height: '80vh',
     alignItems: 'center',
 };

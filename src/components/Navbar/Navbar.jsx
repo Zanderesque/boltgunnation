@@ -1,6 +1,8 @@
 import { Dropdown } from 'react-bootstrap';
 import { BsList } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
 import logo from '../../assets/logo.png';
+import { uiControlActions } from '../../store/ui-control-slice';
 
 export const Navbar = () => {
     return (
@@ -30,6 +32,12 @@ const NavbarCenter = () => {
 };
 
 const NavbarEnd = () => {
+    const dispatch = useDispatch();
+
+    const setNewPage = (newPage) => {
+        dispatch(uiControlActions.setCurrentPage(newPage));
+    };
+
     return (
         <Dropdown>
             <Dropdown.Toggle variant="secondary" className="dropdown-button">
@@ -37,11 +45,8 @@ const NavbarEnd = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item>Home</Dropdown.Item>
-                <Dropdown.Item>Bolt Gun Race</Dropdown.Item>
-                <Dropdown.Item>Range Safety Rules</Dropdown.Item>
-                {/* <Dropdown.Item>Del Norte Gun Club</Dropdown.Item>
-                <Dropdown.Item>Zia Rifle & Pistol Club</Dropdown.Item> */}
+                <Dropdown.Item onClick={() => setNewPage(1)}>Home</Dropdown.Item>
+                <Dropdown.Item onClick={() => setNewPage(2)}>Range Safety Rules</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
@@ -54,7 +59,7 @@ const mainNavbar = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '5px',
-    borderBottom: '	#7d7d7d 1px solid',
+    boxShadow: '1px 2px 3px rgba(0,0,0,.5)',
 };
 
 const logoContainer = {

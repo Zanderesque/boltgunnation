@@ -10,3 +10,22 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.home {
+    background-image: url(../assets/vortex.JPG);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-toggle {
+    background-color: white;
+}
+
+.dropdown-button {
+    background-color: aqua;
+}
