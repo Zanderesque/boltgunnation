@@ -1,7 +1,7 @@
 import { Dropdown } from 'react-bootstrap';
 import { BsList } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/cleanedLogo.png';
 import { uiControlActions } from '../../store/ui-control-slice';
 
 export const Navbar = () => {
@@ -53,7 +53,7 @@ const NavbarEnd = () => {
 };
 
 const mainNavbar = {
-    backgroundColor: '#fff',
+    backgroundColor: '#48494b',
     display: 'flex',
     height: 'fit-content',
     justifyContent: 'space-between',
