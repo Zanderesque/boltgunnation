@@ -26,16 +26,16 @@ const NavbarCenter = () => {
 const NavbarEnd = () => {
     return (
         <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle variant="secondary" className="dropdown-button">
                 <BsList />
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Home</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Bolt Gun Race</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Range Safety Rules</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Del Norte Gun Club</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Zia Rifle & Pistol Club</Dropdown.Item>
+                <Dropdown.Item>Home</Dropdown.Item>
+                <Dropdown.Item>Bolt Gun Race</Dropdown.Item>
+                <Dropdown.Item>Range Safety Rules</Dropdown.Item>
+                <Dropdown.Item>Del Norte Gun Club</Dropdown.Item>
+                <Dropdown.Item>Zia Rifle & Pistol Club</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
