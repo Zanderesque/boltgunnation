@@ -1,5 +1,14 @@
+import { Home } from '../Home';
+
 export const ContentContainer = () => {
-  return <div style={contentContainerSyle}>Content</div>;
+    return (
+        <div style={contentContainerSyle}>
+            <Home />
+        </div>
+    );
 };
 
-const contentContainerSyle = {};
+const contentContainerSyle = {
+    height: '100%',
+    backgroundColor: 'red',
+};
