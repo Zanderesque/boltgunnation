@@ -15,14 +15,14 @@ export const Navbar = () => {
 const NavbarStart = () => {
     return (
         <div style={logoContainer}>
-            <img src={logo} style={logoStyle}></img>
+            <img src={logo} style={logoStyle} alt="site logo"></img>
         </div>
     );
 };
 
 const logoStyle = {
-    height: '70px',
-    width: '70px',
+    height: '60px',
+    width: '60px',
 };
 
 const NavbarCenter = () => {
@@ -54,6 +54,7 @@ const mainNavbar = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '5px',
+    borderBottom: '	#7d7d7d 1px solid',
 };
 
 const logoContainer = {
