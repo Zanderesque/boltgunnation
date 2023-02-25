@@ -5,7 +5,7 @@ export const Rules = () => {
                 <h1>Del Norte Precision Rifle Match Briefing</h1>
             </div>
             <div style={briefing}>
-                <p>
+                <p style={briefingText}>
                     Welcome to the Del Norte Gun Club Precision Rifle Match. The Purpose of our
                     matches is camaraderie and competition in a safe environment. All of the
                     Participants and Spectators are safety officers. Anyone may call a “Cease Fire”
@@ -37,4 +37,8 @@ const header = {
 const briefing = {
     marginLeft: '20vw',
     marginRight: '20vw',
+};
+
+const briefingText = {
+    textIndent: '25px',
 };

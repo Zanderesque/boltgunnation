@@ -12,10 +12,21 @@ code {
 }
 
 .home {
-    background-image: url(../assets/crew.jpeg);
-    background-size: cover;
+    /* height: 100%;
+    width: 100%;
+    background-image: url(../assets/vortexBlack.JPG);
+    background-size: contain;
+    background-position-x: center; */
     /* background-repeat: no-repeat; */
-    /* background-position-x: center; */
+}
+
+.home-image-container {
+    height: 100%;
+    width: 100%;
+    background-image: url(../assets/vortexBlack.JPG);
+    background-size: contain;
+    background-position-x: center;
+    /* background-repeat: no-repeat; */
 }
 
 .dropdown-toggle::after {
