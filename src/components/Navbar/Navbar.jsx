@@ -1,5 +1,6 @@
 import { Dropdown } from 'react-bootstrap';
 import { BsList } from 'react-icons/bs';
+import logo from '../../assets/logo.png';
 
 export const Navbar = () => {
     return (
@@ -14,9 +15,14 @@ export const Navbar = () => {
 const NavbarStart = () => {
     return (
         <div style={logoContainer}>
-            <h1 style={logo}>BGN LOGO</h1>
+            <img src={logo} style={logoStyle}></img>
         </div>
     );
+};
+
+const logoStyle = {
+    height: '70px',
+    width: '70px',
 };
 
 const NavbarCenter = () => {
@@ -34,15 +40,15 @@ const NavbarEnd = () => {
                 <Dropdown.Item>Home</Dropdown.Item>
                 <Dropdown.Item>Bolt Gun Race</Dropdown.Item>
                 <Dropdown.Item>Range Safety Rules</Dropdown.Item>
-                <Dropdown.Item>Del Norte Gun Club</Dropdown.Item>
-                <Dropdown.Item>Zia Rifle & Pistol Club</Dropdown.Item>
+                {/* <Dropdown.Item>Del Norte Gun Club</Dropdown.Item>
+                <Dropdown.Item>Zia Rifle & Pistol Club</Dropdown.Item> */}
             </Dropdown.Menu>
         </Dropdown>
     );
 };
 
 const mainNavbar = {
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#fff',
     display: 'flex',
     height: 'fit-content',
     justifyContent: 'space-between',
@@ -53,5 +59,3 @@ const mainNavbar = {
 const logoContainer = {
     marginLeft: '10px',
 };
-
-const logo = {};
