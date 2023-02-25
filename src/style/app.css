@@ -12,10 +12,10 @@ code {
 }
 
 .home {
-    background-image: url(../assets/vortex.JPG);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: center;
+    background-image: url(../assets/crew.jpeg);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* background-position-x: center; */
 }
 
 .dropdown-toggle::after {

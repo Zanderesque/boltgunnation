@@ -12,6 +12,7 @@ export const Home = () => {
 const home = {
     display: 'Flex',
     flexDirection: 'column',
-    height: '80vh',
+    height: '100%',
     alignItems: 'center',
+    color: 'white',
 };
