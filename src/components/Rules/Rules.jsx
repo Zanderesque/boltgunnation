@@ -4,8 +4,8 @@ export const Rules = () => {
             <div style={header}>
                 <h1>Del Norte Precision Rifle Match Briefing</h1>
             </div>
-            <div style={briefing}>
-                <p style={briefingText}>
+            <div style={paragraph}>
+                <p style={paragraphText}>
                     Welcome to the Del Norte Gun Club Precision Rifle Match. The Purpose of our
                     matches is camaraderie and competition in a safe environment. All of the
                     Participants and Spectators are safety officers. Anyone may call a “Cease Fire”
@@ -20,6 +20,35 @@ export const Rules = () => {
                     water. You will shoot better.
                 </p>
             </div>
+            <div style={header}>
+                <h3>Safety</h3>
+            </div>
+            <div style={safety}>
+                <b>Four Rules for Gun Safety</b>
+                <ol>
+                    <li>All guns are always loaded</li>
+                    <li>Keep your finger off the trigger until your sights are on the target</li>
+                    <li>Never point the gun at something you are not willing to kill or destroy</li>
+                    <li>Identify your target and what is beyond it</li>
+                </ol>
+            </div>
+            <div style={safety}>
+                <b>Emergency Plan</b>
+                <ul>
+                    <li>Does anyone have medical training? Backup?</li>
+                    <li>Who has phone service? Backup?</li>
+                    <li>Who has a vehicle that can be used for transport? Where are the keys?</li>
+                </ul>
+            </div>
+            <div style={{ ...paragraph, ...paragraphText }}>
+                In the event of an emergency, our medical volunteer(s) will deal with the emergency,
+                while the transport vehicle is retrieved. Our Phone volunteer will contact 911 and
+                explain the nature of the incident. DNGC’s plan is to transport the injured/sick
+                person to King Meadow park (Intersection of King and Rainbow) and meet medical
+                transport there. In the event of an emergency please return firearms to your
+                vehicle, with the exception of the firearm involved, if any. In the event of an
+                emergency please do not speak to the media.
+            </div>
         </div>
     );
 };
@@ -31,14 +60,16 @@ const pageContainer = {
 };
 
 const header = {
-    margin: '5vh',
+    margin: '20px',
 };
 
-const briefing = {
+const paragraph = {
     marginLeft: '20vw',
     marginRight: '20vw',
 };
 
-const briefingText = {
+const paragraphText = {
     textIndent: '25px',
 };
+
+const safety = {};
