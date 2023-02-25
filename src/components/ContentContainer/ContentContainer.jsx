@@ -10,5 +10,4 @@ export const ContentContainer = () => {
 
 const contentContainerSyle = {
     height: '100%',
-    backgroundColor: 'red',
 };

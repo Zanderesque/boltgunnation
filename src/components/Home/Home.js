@@ -12,6 +12,5 @@ const home = {
     display: 'Flex',
     flexDirection: 'column',
     height: '100%',
-    backgroundColor: 'green',
     alignItems: 'center',
 };

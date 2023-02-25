@@ -42,7 +42,7 @@ const NavbarEnd = () => {
 };
 
 const mainNavbar = {
-    backgroundColor: 'aquamarine',
+    backgroundColor: 'lightgrey',
     display: 'flex',
     height: 'fit-content',
     justifyContent: 'space-between',
