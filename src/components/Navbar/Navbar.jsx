@@ -1,4 +1,5 @@
 import { Dropdown } from 'react-bootstrap';
+import { BsList } from 'react-icons/bs';
 
 export const Navbar = () => {
     return (
@@ -25,14 +26,16 @@ const NavbarCenter = () => {
 const NavbarEnd = () => {
     return (
         <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Dropdown Button
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                <BsList />
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">Home</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Bolt Gun Race</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Range Safety Rules</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Del Norte Gun Club</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Zia Rifle & Pistol Club</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
@@ -43,6 +46,8 @@ const mainNavbar = {
     display: 'flex',
     height: 'fit-content',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '5px',
 };
 
 const logoContainer = {
