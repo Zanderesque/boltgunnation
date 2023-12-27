@@ -1,20 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const HOME = 1;
-
 const uiControlSlice = createSlice({
     name: 'uiControl',
     initialState: {
-        currentPage: HOME,
+        currentPage: 1,
     },
-    reducers: {
-        setCurrentPage(state, action) {
-            return {
-                ...state,
-                currentPage: action.payload,
-            };
-        },
-    },
+    reducers: {},
 });
 
 export const uiControlActions = uiControlSlice.actions;

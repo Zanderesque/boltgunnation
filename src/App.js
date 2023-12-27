@@ -1,19 +1,21 @@
-import { ContentContainer } from "./components/ContentContainer";
-import { Navbar } from "./components/Navbar";
+import './index.css';
+import { Navbar } from './components/Navigation';
+import { ContentContainer } from './components/Structure';
+import { Provider } from 'react-redux';
+import Footer from './components/Footer/Footer';
+import store from './store';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
-  return (
-    <div style={appContainerStyle}>
-      <Navbar />
-      <ContentContainer />
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <Navbar />
+            <ContentContainer />
+            {/* <Footer/> */}
+        </Provider>
+    );
 }
-
-const appContainerStyle = {
-  display: "flex",
-  flexDirection: "column",
-  height: "100vh",
-};
 
 export default App;
