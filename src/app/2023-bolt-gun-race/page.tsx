@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '2023 Bolt Gun Race | Bolt Gun Nation',
-  description: 'Join the 2023 Bolt Gun Race series - a precision rifle competition designed to improve New Mexico shooters' skills through competitive matches.',
+  description: 'Join the 2023 Bolt Gun Race series - a precision rifle competition designed to improve New Mexico shooters\' skills through competitive matches.',
   openGraph: {
     title: '2023 Bolt Gun Race',
-    description: 'Join the 2023 Bolt Gun Race series - a precision rifle competition designed to improve New Mexico shooters' skills through competitive matches.',
+    description: 'Join the 2023 Bolt Gun Race series - a precision rifle competition designed to improve New Mexico shooters\' skills through competitive matches.',
     type: 'article',
   },
 };

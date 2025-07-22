@@ -2,34 +2,25 @@ import React from 'react';
 import Link from 'next/link';
 
 interface SiteTitleProps {
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
   className?: string;
-  level?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  children: React.ReactNode;
 }
 
 /**
  * SiteTitle component - Converts WordPress wp:site-title block to React
  * Equivalent to WordPress site title block with configurable heading level
  */
-const SiteTitle: React.FC<SiteTitleProps> = ({ 
+export default function SiteTitle({ 
+  level = 1, 
   className = '', 
-  level = 0 
-}) => {
+  children 
+}: SiteTitleProps) {
+  
   const siteTitle = "Bolt Gun Nation"; // This would come from your site config
   
-  // WordPress uses level 0 to indicate no heading tag (just text)
-  if (level === 0) {
-    return (
-      <Link 
-        href="/" 
-        className={`text-xl font-bold text-wp-contrast hover:text-wp-accent-1 transition-colors ${className}`}
-      >
-        {siteTitle}
-      </Link>
-    );
-  }
-  
   // Dynamic heading tag based on level
-  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
+  const HeadingTag = `h${level}` as keyof React.JSX.IntrinsicElements;
   
   return (
     <HeadingTag className={`text-xl font-bold ${className}`}>
@@ -41,6 +32,4 @@ const SiteTitle: React.FC<SiteTitleProps> = ({
       </Link>
     </HeadingTag>
   );
-};
-
-export default SiteTitle;
+}
