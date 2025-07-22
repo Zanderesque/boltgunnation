@@ -1,0 +1,1 @@
+jQuery('#footer-info').html("&copy;Bolt Gun Nation 20<span class=\"divibooster_yr\"><\/span><script>jQuery(function($){$(\".divibooster_yr\").text(new Date().getFullYear().toString().substr(2,2));});<\/script> | All Rights Reserved");jQuery(function($){});
