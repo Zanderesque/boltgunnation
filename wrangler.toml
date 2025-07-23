@@ -3,6 +3,3 @@ compatibility_date = "2025-07-23"
 
 # Configuration for Cloudflare Pages
 pages_build_output_dir = ".next"
-
-[build]
-command = "npm install && npm run build"
