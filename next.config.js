@@ -10,8 +10,24 @@ const nextConfig = {
   },
   // Use the correct configuration key for external packages
   serverExternalPackages: [],
-  // Ensure we're using the correct output mode
-  output: 'standalone',
+
+  // Change from 'standalone' to 'export' for Cloudflare Pages
+  output: 'export',
+
+  // Disable image optimization to reduce build size
+  images: {
+    unoptimized: true,
+  },
+
+  // Disable webpack cache to avoid large files
+  webpack: (config, { dev, isServer }) => {
+    // Disable persistent caching for production builds
+    if (!dev) {
+      config.cache = false;
+    }
+
+    return config;
+  },
 
   // Allow cross-origin requests during development
   allowedDevOrigins: [
