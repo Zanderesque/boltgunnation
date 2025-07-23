@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+// Make this route compatible with static export
+export const dynamic = 'force-static';
+
 export async function GET() {
   try {
     // Basic health check - verify the API is responding

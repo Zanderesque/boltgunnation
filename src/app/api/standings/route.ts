@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Make this route compatible with static export
+export const dynamic = 'force-static';
+
 export interface StandingsEntry {
   rank: number;
   name: string;
