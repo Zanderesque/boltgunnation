@@ -10,24 +10,62 @@ export const metadata: Metadata = {
 // Current sponsors organized by tier
 const currentSponsors = {
   stage: [
-    // Add Stage level sponsors here
+    {
+      name: 'Vortex Optics',
+      logo: '/media/images/sponsors/vortex-extreme-seeklogo.svg',
+      website: 'https://vortexoptics.com',
+      description: 'High-quality optics for shooting and hunting'
+    }
   ],
   platinum: [
     {
-      name: 'Area 419',
-      logo: '/media/images/uploads/2024/07/area419-400x250.webp',
-      website: 'https://area419.com',
-      description: 'Precision rifle accessories and components'
+      name: 'Bulldog Firearms',
+      logo: '/media/images/uploads/2023/03/Bulldog-Logo.png', // TODO: Copy from /media/images/uploads/2023/03/Bulldog-Logo.png
+      website: 'https://www.bulldogfirearmsnm.com',
+      description: 'Rio Rancho, New Mexico'
     }
   ],
   gold: [
-    // Add Gold level sponsors here
+    {
+      name: 'QPro Defense',
+      logo: '/media/images/sponsors/QPRO-D-logo.jpg',
+      website: 'https://www.qproprofessionaldefense.com',
+      description: 'Rio Rancho, New Mexico'
+    },
+    {
+      name: 'Kelbly',
+      logo: '/media/images/sponsors/kelby-logo.jpg',
+      website: 'https://kelbly.com',
+      description: 'Premium custom rifles and actions'
+    },
+    {
+      name: 'AMP Annealing',
+      logo: '/media/images/sponsors/amp logo.png',
+      website: 'https://www.ampannealing.com',
+      description: 'Precision case annealing machines and equipment'
+    },
+    {
+      name: 'MDT',
+      logo: '/media/images/sponsors/mdt-seeklogo.svg',
+      website: 'https://mdt.com',
+      description: 'Precision rifle chassis systems and accessories'
+    }
   ],
   silver: [
-    // Add Silver level sponsors here  
+    {
+      name: 'Del Norte Gun Club',
+      logo: '/media/images/uploads/2023/03/Del-Norte-Gun-Club-logo.jpg', // TODO: Copy from /media/images/uploads/2023/03/Del-Norte-Gun-Club-logo.jpg
+      website: 'https://www.dngnm.com',
+      description: 'Rio Rancho, New Mexico'
+    }
   ],
   bronze: [
-    // Add Bronze level sponsors here
+    {
+      name: 'Area 419',
+      logo: '/media/images/sponsors/area419 logo.jpg', // TODO: Copy from /media/images/uploads/2024/07/area419-400x250.webp
+      website: 'https://area419.com',
+      description: 'Precision rifle accessories and components'
+    }
   ]
 };
 
