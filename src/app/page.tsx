@@ -107,7 +107,7 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <motion.div variants={fadeInUp} className="mb-8">
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-wp-accent-1/10 border border-wp-accent-1/20 text-wp-accent-1 font-semibold text-sm">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-wp-accent-1/20 text-wp-accent-1 font-semibold text-sm">
                     <TrophyIcon className="h-4 w-4 mr-2 text-wp-accent-1" />
                     New Mexico's Premier Precision Rifle Community
                   </div>
@@ -115,7 +115,7 @@ export default function HomePage() {
                 
                 <motion.h1 
                   variants={fadeInUp}
-                  className="text-5xl lg:text-7xl font-bold mb-8 leading-tight"
+                  className="text-5xl lg:text-7xl font-bold mb-8 leading-tight text-black"
                 >
                   <span className="text-wp-contrast">
                     Forge Excellence
@@ -128,7 +128,7 @@ export default function HomePage() {
                 
                 <motion.p 
                   variants={fadeInUp}
-                  className="text-xl text-wp-contrast/70 mb-10 leading-relaxed max-w-xl"
+                  className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl"
                 >
                   Join New Mexico's most dedicated precision rifle community. We use structured competition to sharpen skills, build lasting fellowship, and prepare our members for regional and national championships.
                 </motion.p>
@@ -146,22 +146,27 @@ export default function HomePage() {
                     Join Our Community
                     <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </a>
-                  <button className="group bg-wp-base border border-wp-contrast/10 text-wp-contrast px-8 py-4 rounded-xl font-semibold hover:bg-wp-contrast/5 hover:shadow-lg transition-all duration-300 flex items-center justify-center">
-                    <PlayIcon className="mr-2 h-5 w-5" />
-                    Watch Introduction
-                  </button>
+                  <a 
+                    href="/contact"
+                    className="group bg-white hover:bg-slate-50 text-black border border-slate-200 font-semibold py-3 px-6 rounded-lg inline-flex items-center transition-all duration-300"
+                  >
+                    Learn More
+                  </a>
                 </motion.div>
               </div>
 
               {/* Stats Grid */}
               <motion.div 
-                variants={fadeInUp}
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
                 className="grid grid-cols-2 gap-6"
               >
                 {stats.map((stat, index) => (
-                  <div key={index} className="bg-wp-base/60 backdrop-blur-sm border border-wp-contrast/10 rounded-2xl p-6 text-center hover:bg-wp-base/80 transition-all duration-300">
+                  <div key={index} className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
                     <div className="text-3xl font-bold text-wp-accent-1 mb-2">{stat.number}</div>
-                    <div className="text-sm font-medium text-wp-contrast/70">{stat.label}</div>
+                    <div className="text-sm font-medium text-slate-600">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -170,7 +175,7 @@ export default function HomePage() {
         </section>
 
         {/* Features Section */}
-        <section className="py-20 bg-wp-base/40 backdrop-blur-sm border-y border-wp-contrast/10">
+        <section className="py-20">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -179,10 +184,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-wp-contrast">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-black">
                 The Path to Mastery
               </h2>
-              <p className="text-xl text-wp-contrast/70 max-w-3xl mx-auto">
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 Every expert was once a beginner. Every champion was forged through dedication, practice, and the crucible of competition.
               </p>
             </motion.div>
@@ -198,13 +203,13 @@ export default function HomePage() {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="group bg-wp-base/80 backdrop-blur-sm border border-wp-contrast/10 rounded-2xl p-8 hover:bg-wp-base hover:shadow-xl hover:shadow-wp-contrast/5 transition-all duration-500"
+                  className="group bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-8 hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-500"
                 >
                   <div className="bg-wp-accent-1/10 rounded-xl p-4 inline-block mb-6">
                     <feature.icon className="h-8 w-8 text-wp-accent-1" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-wp-contrast">{feature.title}</h3>
-                  <p className="text-wp-contrast/70">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-black">{feature.title}</h3>
+                  <p className="text-slate-600">{feature.description}</p>
                 </motion.div>
               ))}
             </motion.div>

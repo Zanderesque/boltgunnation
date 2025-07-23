@@ -7,8 +7,8 @@ interface FooterProps {
 }
 
 /**
- * Footer component - Consistent with Header styling
- * Uses WordPress color variables and Tailwind classes
+ * Footer component - Styled to match sponsors page
+ * Uses gradient backgrounds and modern styling
  */
 const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   const currentYear = new Date().getFullYear();
@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
     },
     { 
       label: 'YouTube', 
-      href: '#',
+      href: 'https://www.youtube.com/channel/UCaJTcqYRuHmzxkqcLZqGy_Q',
       icon: (
         <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
@@ -54,135 +54,125 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   ];
 
   return (
-    <footer className={`w-full bg-wp-base border-t border-wp-contrast/10 ${className}`}>
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Column */}
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/media/images/uploads/2023/03/boltgun_logo-1024x1024.png"
-                alt="Bolt Gun Nation Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
-              <span className="text-xl font-bold text-wp-contrast">Bolt Gun Nation</span>
+    <footer className={`w-full bg-gradient-to-br from-slate-50 via-amber-50/30 to-orange-50/50 ${className}`}>
+      {/* Subtle geometric background */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50L20 20M50 50L80 20M50 50L80 80M50 50L20 80' stroke='%23B45309' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
+        }}></div>
+      </div>
+      
+      <div className="relative z-10">
+        <div className="container mx-auto px-6 py-12">
+          <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Brand Column */}
+              <div className="col-span-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <Image
+                    src="/media/images/uploads/2023/03/boltgun_logo-1024x1024.png"
+                    alt="Bolt Gun Nation Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                  />
+                  <span className="text-xl font-bold text-slate-900">Bolt Gun Nation</span>
+                </div>
+                <p className="text-sm text-slate-600 mb-6">
+                  New Mexico's premier precision rifle community dedicated to competition, excellence, and camaraderie.
+                </p>
+                <div className="flex gap-4">
+                  {socialLinks.map((link) => (
+                    <a 
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-wp-accent-1 transition-colors"
+                      aria-label={link.label}
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Quick Links */}
+              <div className="col-span-1">
+                <h3 className="font-semibold text-slate-900 mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  {footerLinks.slice(0, 4).map((link) => (
+                    <li key={link.href}>
+                      <Link 
+                        href={link.href}
+                        className="text-slate-600 hover:text-wp-accent-1 transition-colors text-sm"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Resources */}
+              <div className="col-span-1">
+                <h3 className="font-semibold text-slate-900 mb-4">Resources</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a 
+                      href="https://www.facebook.com/groups/339663940504983/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-wp-accent-1 transition-colors text-sm"
+                    >
+                      Facebook Group
+                    </a>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/blog"
+                      className="text-slate-600 hover:text-wp-accent-1 transition-colors text-sm"
+                    >
+                      Blog & Updates
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/sponsors"
+                      className="text-slate-600 hover:text-wp-accent-1 transition-colors text-sm"
+                    >
+                      Our Sponsors
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="/contact"
+                      className="text-slate-600 hover:text-wp-accent-1 transition-colors text-sm"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <p className="text-sm text-wp-contrast/70 mb-6">
-              New Mexico's premier precision rifle community dedicated to competition, excellence, and camaraderie.
+          </div>
+          
+          {/* Bottom Bar */}
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-slate-600">
+              {currentYear} Bolt Gun Nation. All rights reserved.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((link) => (
-                <a 
-                  key={link.label}
+            <div className="flex gap-6 mt-4 md:mt-0">
+              {footerLinks.slice(4).map((link) => (
+                <Link 
+                  key={link.href}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-wp-contrast/70 hover:text-wp-accent-1 transition-colors"
-                  aria-label={link.label}
+                  className="text-sm text-slate-600 hover:text-wp-accent-1 transition-colors"
                 >
-                  {link.icon}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
-          </div>
-          
-          {/* Quick Links */}
-          <div className="col-span-1">
-            <h3 className="font-semibold text-wp-contrast mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {footerLinks.slice(0, 4).map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href}
-                    className="text-wp-contrast/70 hover:text-wp-accent-1 transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Resources */}
-          <div className="col-span-1">
-            <h3 className="font-semibold text-wp-contrast mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <a 
-                  href="https://www.facebook.com/groups/339663940504983/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-wp-contrast/70 hover:text-wp-accent-1 transition-colors text-sm"
-                >
-                  Facebook Group
-                </a>
-              </li>
-              <li>
-                <Link 
-                  href="/blog"
-                  className="text-wp-contrast/70 hover:text-wp-accent-1 transition-colors text-sm"
-                >
-                  Blog & Updates
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/sponsors"
-                  className="text-wp-contrast/70 hover:text-wp-accent-1 transition-colors text-sm"
-                >
-                  Our Sponsors
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/contact"
-                  className="text-wp-contrast/70 hover:text-wp-accent-1 transition-colors text-sm"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Newsletter */}
-          <div className="col-span-1">
-            <h3 className="font-semibold text-wp-contrast mb-4">Stay Updated</h3>
-            <p className="text-sm text-wp-contrast/70 mb-4">
-              Join our newsletter for the latest events, matches, and community news.
-            </p>
-            <form className="flex flex-col gap-2" suppressHydrationWarning>
-              <input
-                type="email"
-                placeholder="Your email"
-                className="px-4 py-2 border border-wp-contrast/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-wp-accent-1 bg-wp-base"
-              />
-              <button
-                type="submit"
-                className="bg-wp-accent-1 text-wp-contrast font-medium px-4 py-2 rounded-lg hover:bg-wp-accent-1/80 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-        
-        {/* Bottom Bar */}
-        <div className="border-t border-wp-contrast/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-wp-contrast/60">
-            {currentYear} Bolt Gun Nation. All rights reserved.
-          </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            {footerLinks.slice(4).map((link) => (
-              <Link 
-                key={link.href}
-                href={link.href}
-                className="text-sm text-wp-contrast/60 hover:text-wp-accent-1 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
           </div>
         </div>
       </div>
