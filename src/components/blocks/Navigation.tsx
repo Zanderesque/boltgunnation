@@ -52,8 +52,8 @@ const Navigation: React.FC<NavigationProps> = ({
     };
 
     const baseClasses = isMobile 
-      ? "text-wp-contrast hover:text-wp-accent-1 transition-colors font-medium py-3 block border-b border-wp-contrast/10 w-full"
-      : "text-wp-contrast hover:text-wp-accent-1 transition-colors font-medium relative group";
+      ? "hover:text-wp-accent-1 transition-colors font-medium py-3 block border-b border-wp-contrast/10 w-full"
+      : "hover:text-wp-accent-1 transition-colors font-medium relative group";
 
     if (isExternal) {
       return (
