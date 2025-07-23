@@ -4,7 +4,7 @@ compatibility_date = "2025-07-23"
 
 # Pages Configuration
 # This tells Cloudflare where to find the built Next.js output
-pages_build_output_dir = ".next"
+pages_build_output_dir = "out"
 
 # Environment Variables
 # Add any environment variables your application needs here
