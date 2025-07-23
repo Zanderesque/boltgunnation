@@ -10,33 +10,27 @@ const posts = [
   {
     title: 'Training Techniques for Precision Rifle',
     slug: 'training-techniques',
-    date: 'July 23, 2025',
+    date: 'December 5, 2020',
     excerpt: 'Consistent, focused practice is the key to improving your precision rifle skills. This guide outlines effective training methods for shooters of all levels.',
   },
   {
-    title: 'Precision Rifle Equipment Recommendations',
+    title: 'Equipment Requirements for PRS Style Matches',
     slug: 'equipment-recommendations',
-    date: 'July 23, 2025',
+    date: 'March 15, 2020',
     excerpt: 'Getting started in precision rifle shooting can be overwhelming with the vast array of equipment options available. This guide provides recommendations for both beginners and experienced shooters.',
   },
   {
     title: 'Safety, Range Commands & Etiquette',
     slug: 'safety-commands-etiquette',
-    date: 'June 1, 2025',
+    date: 'October 12, 2020',
     excerpt: 'Essential safety guidelines, range commands, and etiquette for precision rifle competitions. All participants and spectators are safety officers.',
-  },
-  {
-    title: 'PRS 1st-timer',
-    slug: 'prs-1st-timer',
-    date: 'July 21, 2025',
-    excerpt: 'Add your post description here...',
-  },
+  }
 ];
 
 const pages = [
   {
-    title: '2023 Bolt Gun Race',
-    slug: '2023-bolt-gun-race',
+    title: 'Bolt Gun Nation - Points Race',
+    slug: 'bolt-gun-points-race',
     description: 'Complete details about our annual precision rifle competition series including rules, scoring, prizes, and registration information.',
   },
   {

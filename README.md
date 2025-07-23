@@ -20,18 +20,20 @@ Bolt Gun Nation is a community-driven platform for New Mexico's precision rifle 
 
 ### 🏆 Points Race System
 - **Live Leaderboard**: Real-time standings integrated with Google Sheets
-- Annual competition series running from March to September
+- Annual competition series running from May 2025 to March 2026
 - Monthly matches at premier New Mexico venues:
   - **Del Norte Gun Club** (Rio Rancho, 2nd Sunday)
   - **Zia Rifle And Pistol Club** (Albuquerque, 3rd Saturday)
 - Comprehensive scoring system based on performance and competition
-- Two-day finale with awards banquet
+- Two-day finale match in April 2026 with awards banquet
 - **Registration**: [Sign up for the Points Race](https://docs.google.com/forms/d/e/1FAIpQLScrVfdf7qWpmMe91bAs9JCA4yMqXOMogH7LaMETfwj4gkmPHg/viewform)
+- **Equipment Requirements**: [View complete equipment guide](https://boltgunnation.com/blog/equipment-recommendations)
 
 ### 📊 Live Leaderboard Integration
 - **Google Sheets Integration**: Real-time data fetching from published spreadsheets
 - **CORS Proxy System**: Multiple fallback proxies for reliable data access
 - **Auto-refresh**: Updates every 5 minutes with manual refresh option
+- **Dynamic Statistics**: Automatically calculates completed matches, remaining matches, and average scores
 - **Data Structure**: Season rank, total points, shooter names, and top 3 scores
 - **Visual Design**: Trophy badges for top 3 positions with responsive layout
 
@@ -58,11 +60,12 @@ This project is built with modern web technologies:
 
 - **Framework**: [Next.js 15](https://nextjs.org) with App Router
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom WordPress-compatible variables
+- **Styling**: Tailwind CSS v4 with custom WordPress-compatible variables
 - **UI Components**: Headless UI with Heroicons
 - **Animations**: Framer Motion
 - **Font**: Inter (Google Fonts)
 - **Data Integration**: Google Sheets CSV export with CORS proxy fallback
+- **Dynamic Content**: Date-based match scheduling and statistics
 
 ### Architecture
 - **Migrated from WordPress**: Converted from WordPress Twenty Twenty-Five theme
@@ -70,6 +73,7 @@ This project is built with modern web technologies:
 - **Responsive Design**: Mobile-first approach with consistent styling
 - **SEO Optimized**: Next.js metadata and structured content
 - **Real-time Data**: Live Google Sheets integration for competition standings
+- **Dynamic Calculations**: Automatic date-based match scheduling and statistics
 
 ### Google Sheets Integration
 - **CSV Export**: Uses public Google Sheets CSV export URLs
@@ -238,6 +242,14 @@ We welcome contributions to improve the Bolt Gun Nation platform:
 - **Testing**: Verify changes work across all pages
 - **Code Quality**: Follow TypeScript best practices
 - **Propose Edits**: Use the propose_code interface for all changes
+
+## Blog Content
+
+- **Equipment Requirements**: Comprehensive guide for PRS style matches
+- **Safety Guidelines**: Range commands and etiquette for new shooters
+- **Training Techniques**: Precision rifle skill development strategies
+- **First-Timer Guide**: Introduction to PRS competitions for beginners
+- **Staggered Publication**: Content organized with natural timeline (2020-2021)
 
 ## Sponsor Management
 
