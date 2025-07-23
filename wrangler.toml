@@ -1,0 +1,38 @@
+name = "bolt-gun-nation"
+compatibility_date = "2025-07-23"
+
+# Configuration for Cloudflare Pages
+[site]
+bucket = "./.next/static"
+entry-point = "."
+
+[build]
+command = "npm run build"
+output_directory = ".next"
+
+[build.upload]
+format = "service-worker"
+
+[env.production]
+NODE_ENV = "production"
+
+[env.development]
+NODE_ENV = "development"
+
+# Routes configuration
+[[routes]]
+pattern = "/_next/static/*"
+zone_name = "static-assets"
+
+[[routes]]
+pattern = "/api/*"
+zone_name = "api"
+
+# KV Namespace for caching (optional, uncomment if needed)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"
+
+# Specify compatibility flags
+[compatibility_flags]
+nodejs_compat = true
