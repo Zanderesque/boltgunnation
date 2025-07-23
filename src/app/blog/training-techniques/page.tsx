@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: 'Training Techniques for Precision Rifle',
     description: 'Effective training methods and practice techniques to improve your precision rifle shooting skills.',
     type: 'article',
-    publishedTime: '2025-07-23',
+    publishedTime: '2020-12-05',
   },
 };
 
@@ -21,8 +21,8 @@ export default function TrainingTechniquesPage() {
               Training Techniques for Precision Rifle
             </h1>
             <div className="flex items-center text-wp-contrast/70 mb-8">
-              <time dateTime="2025-07-23" className="text-sm">
-                July 23, 2025
+              <time dateTime="2020-12-05" className="text-sm">
+                December 5, 2020
               </time>
             </div>
           </header>

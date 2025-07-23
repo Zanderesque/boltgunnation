@@ -29,6 +29,148 @@ export default function PointsRacePage() {
   // Google Sheets URL
   const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRLsAuWw2zruUzP-RwCkm9pFl0nW4BmeXitVO4LICxfF3WSnArvVo8S6ve4P4e9e80SUliIsZ7Udf6z/pubhtml?gid=915428776&single=true";
 
+  // Calculate upcoming match dates
+  const getUpcomingMatches = () => {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const matches = [];
+    
+    // Generate next 3 Del Norte matches (2nd Sunday of each month)
+    for (let month = today.getMonth(); matches.length < 3; month++) {
+      if (month > 11) month = 0; // Reset to January if we go past December
+      
+      const year = month < today.getMonth() ? currentYear + 1 : currentYear;
+      const firstDayOfMonth = new Date(year, month, 1);
+      let secondSunday = new Date(year, month, 1);
+      
+      // Find the first Sunday
+      while (secondSunday.getDay() !== 0) {
+        secondSunday.setDate(secondSunday.getDate() + 1);
+      }
+      
+      // Add 7 days to get to the second Sunday
+      secondSunday.setDate(secondSunday.getDate() + 7);
+      
+      // Only add future dates
+      if (secondSunday >= today) {
+        matches.push({
+          date: secondSunday,
+          event: "Del Norte Gun Club PRS Match",
+          location: "208 Torcido Rd NW, Rio Rancho, NM 87144",
+          distance: "600-1120 yards",
+          points: "70 pts max",
+          status: "Monthly"
+        });
+      }
+    }
+    
+    // Generate next 3 Zia matches (3rd Saturday of each month)
+    for (let month = today.getMonth(); matches.length < 6; month++) {
+      if (month > 11) month = 0; // Reset to January if we go past December
+      
+      const year = month < today.getMonth() ? currentYear + 1 : currentYear;
+      const firstDayOfMonth = new Date(year, month, 1);
+      let thirdSaturday = new Date(year, month, 1);
+      
+      // Find the first Saturday
+      while (thirdSaturday.getDay() !== 6) {
+        thirdSaturday.setDate(thirdSaturday.getDate() + 1);
+      }
+      
+      // Add 14 days to get to the third Saturday
+      thirdSaturday.setDate(thirdSaturday.getDate() + 14);
+      
+      // Only add future dates
+      if (thirdSaturday >= today) {
+        matches.push({
+          date: thirdSaturday,
+          event: "Zia PRS Match",
+          location: "3822-, 3916 Los Picaros Rd SE, Albuquerque, NM 87105",
+          distance: "300-950 yards",
+          points: "60 pts max",
+          status: "Monthly"
+        });
+      }
+    }
+    
+    // Sort matches by date
+    matches.sort((a, b) => a.date.getTime() - b.date.getTime());
+    
+    // Return the next 3 matches
+    return matches.slice(0, 3);
+  };
+
+  // Calculate season stats
+  const calculateSeasonStats = (leaderboardData: LeaderboardEntry[]) => {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const seasonStartDate = new Date(currentYear, 0, 1); // January 1st of current year
+    const seasonEndDate = new Date(currentYear, 11, 31); // December 31st of current year
+    
+    // Count Del Norte matches (2nd Sunday of each month)
+    let totalMatches = 0;
+    let completedMatches = 0;
+    
+    // Count Del Norte matches
+    for (let month = 0; month < 12; month++) {
+      const firstDayOfMonth = new Date(currentYear, month, 1);
+      let secondSunday = new Date(currentYear, month, 1);
+      
+      // Find the first Sunday
+      while (secondSunday.getDay() !== 0) {
+        secondSunday.setDate(secondSunday.getDate() + 1);
+      }
+      
+      // Add 7 days to get to the second Sunday
+      secondSunday.setDate(secondSunday.getDate() + 7);
+      
+      totalMatches++;
+      if (secondSunday < today) {
+        completedMatches++;
+      }
+    }
+    
+    // Count Zia matches (3rd Saturday of each month)
+    for (let month = 0; month < 12; month++) {
+      const firstDayOfMonth = new Date(currentYear, month, 1);
+      let thirdSaturday = new Date(currentYear, month, 1);
+      
+      // Find the first Saturday
+      while (thirdSaturday.getDay() !== 6) {
+        thirdSaturday.setDate(thirdSaturday.getDate() + 1);
+      }
+      
+      // Add 14 days to get to the third Saturday
+      thirdSaturday.setDate(thirdSaturday.getDate() + 14);
+      
+      totalMatches++;
+      if (thirdSaturday < today) {
+        completedMatches++;
+      }
+    }
+    
+    const remainingMatches = totalMatches - completedMatches;
+    
+    // Calculate total competitors and average score from leaderboard data
+    const totalCompetitors = leaderboardData.length;
+    
+    // Calculate average score if there's data
+    let averageScore = "N/A";
+    if (totalCompetitors > 0) {
+      const totalPoints = leaderboardData.reduce((sum, entry) => {
+        return sum + (entry.totalPoints || entry.seasonTotal || 0);
+      }, 0);
+      averageScore = (totalPoints / totalCompetitors).toFixed(1);
+    }
+    
+    return [
+      { label: "Total Competitors", value: totalCompetitors.toString() },
+      { label: "Matches Completed", value: completedMatches.toString() },
+      { label: "Remaining Matches", value: remainingMatches.toString() },
+      { label: "Average Score", value: averageScore }
+    ];
+  };
+
   // Fetch data on component mount
   useEffect(() => {
     const fetchData = async () => {
@@ -96,39 +238,9 @@ export default function PointsRacePage() {
     });
   };
 
-  const upcomingRaces = [
-    {
-      date: "Feb 22",
-      event: "Desert Challenge",
-      location: "White Sands Range",
-      distance: "600-1000 yards",
-      points: "50 pts max",
-      status: "Open"
-    },
-    {
-      date: "Mar 15",
-      event: "High Desert Classic",
-      location: "Santa Fe Range",
-      distance: "300-800 yards", 
-      points: "45 pts max",
-      status: "Registration Opens Soon"
-    },
-    {
-      date: "Apr 5",
-      event: "Rio Grande Precision",
-      location: "Las Cruces",
-      distance: "500-1200 yards",
-      points: "55 pts max",
-      status: "Planning Stage"
-    }
-  ];
-
-  const seasonStats = [
-    { label: "Total Competitors", value: "47" },
-    { label: "Matches Completed", value: "8" },
-    { label: "Remaining Matches", value: "4" },
-    { label: "Average Score", value: "41.2" }
-  ];
+  // Get upcoming matches and season stats
+  const upcomingMatches = getUpcomingMatches();
+  const seasonStats = calculateSeasonStats(leaderboard);
 
   return (
     <div className="min-h-screen bg-wp-base">
@@ -310,47 +422,53 @@ export default function PointsRacePage() {
             </div>
           </div>
 
-          {/* Upcoming Races */}
+          {/* Upcoming Matches */}
           <div className="mb-16">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-wp-contrast mb-2">Upcoming Races</h2>
+              <h2 className="text-3xl font-bold text-wp-contrast mb-2">Upcoming Matches</h2>
               <p className="text-wp-contrast/70">
-                Mark your calendar for these upcoming competition events.
+                Mark your calendar for these monthly competition events.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {upcomingRaces.map((race, index) => (
-                <div 
-                  key={index}
-                  className="bg-wp-base border border-wp-contrast/10 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex">
-                    <div className="bg-wp-accent-1 text-wp-contrast p-6 flex flex-col items-center justify-center">
-                      <span className="text-2xl font-bold">{race.date.split(" ")[1]}</span>
-                      <span className="text-sm font-medium">{race.date.split(" ")[0]}</span>
-                    </div>
-                    <div className="p-6 flex-1">
-                      <h3 className="font-bold text-wp-contrast mb-2">{race.event}</h3>
-                      <div className="flex items-center text-wp-contrast/70 text-sm mb-1">
-                        <MapIcon className="h-4 w-4 mr-1" />
-                        {race.location}
+              {upcomingMatches.map((match, index) => {
+                const matchDate = match.date;
+                const day = matchDate.getDate();
+                const month = matchDate.toLocaleString('en-US', { month: 'short' });
+                
+                return (
+                  <div 
+                    key={index}
+                    className="bg-wp-base border border-wp-contrast/10 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex">
+                      <div className="bg-wp-accent-1 text-wp-contrast p-6 flex flex-col items-center justify-center">
+                        <span className="text-2xl font-bold">{day}</span>
+                        <span className="text-sm font-medium">{month}</span>
                       </div>
-                      <div className="flex items-center text-wp-contrast/70 text-sm mb-1">
-                        <ViewfinderCircleIcon className="h-4 w-4 mr-1" />
-                        {race.distance}
-                      </div>
-                      <div className="flex items-center text-wp-contrast/70 text-sm mb-3">
-                        <StarIcon className="h-4 w-4 mr-1" />
-                        {race.points}
-                      </div>
-                      <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-wp-accent-2/10 text-wp-accent-2">
-                        {race.status}
+                      <div className="p-6 flex-1">
+                        <h3 className="font-bold text-wp-contrast mb-2">{match.event}</h3>
+                        <div className="flex items-center text-wp-contrast/70 text-sm mb-1">
+                          <MapIcon className="h-4 w-4 mr-1" />
+                          {match.location}
+                        </div>
+                        <div className="flex items-center text-wp-contrast/70 text-sm mb-1">
+                          <ViewfinderCircleIcon className="h-4 w-4 mr-1" />
+                          {match.distance}
+                        </div>
+                        <div className="flex items-center text-wp-contrast/70 text-sm mb-3">
+                          <StarIcon className="h-4 w-4 mr-1" />
+                          {match.points}
+                        </div>
+                        <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-wp-accent-2/10 text-wp-accent-2">
+                          {match.status}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -419,25 +537,25 @@ export default function PointsRacePage() {
                 Ready to Compete?
               </h2>
               <p className="text-xl text-wp-contrast/70 mb-10 max-w-3xl mx-auto">
-                Join our next match and start earning points in the season standings. 
-                New competitors are always welcome, regardless of experience level.
+                Join our next match and start earning points in the season standings! 
+                <span className="block mt-2">New competitors are always welcome, regardless of experience level.</span>
+                <span className="block mt-2">Have questions? Reach out through our Facebook group.</span>
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <a 
-                  href="/register" 
+                  href="/bolt-gun-points-race" 
                   className="group bg-wp-accent-1 text-wp-contrast px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-wp-accent-1/25 transition-all duration-300 flex items-center justify-center"
                 >
-                  Register for Next Match
-                </a>
-                <a 
-                  href="/contact" 
-                  className="group bg-wp-base border border-wp-contrast/10 text-wp-contrast px-8 py-4 rounded-xl font-semibold hover:bg-wp-contrast/5 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-                >
-                  Contact Match Director
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Read the complete points race rules & information
                 </a>
               </div>
             </div>
           </div>
+
+          {/* ... */}
         </section>
       </div>
     </div>

@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Precision Rifle Equipment Recommendations | Bolt Gun Nation',
-  description: 'Essential gear and equipment recommendations for precision rifle shooting competitions.',
+  title: 'Equipment Requirements for PRS Style Matches | Bolt Gun Nation',
+  description: 'Essential gear and equipment requirements for participating in Bolt Gun Nation Precision Rifle Competitions.',
   openGraph: {
-    title: 'Precision Rifle Equipment Recommendations',
-    description: 'Essential gear and equipment recommendations for precision rifle shooting competitions.',
+    title: 'Equipment Requirements for PRS Style Matches',
+    description: 'Essential gear and equipment requirements for participating in Bolt Gun Nation Precision Rifle Competitions.',
     type: 'article',
-    publishedTime: '2025-07-23',
+    publishedTime: '2020-03-15',
   },
 };
 
@@ -18,155 +18,96 @@ export default function EquipmentRecommendationsPage() {
         <article className="max-w-4xl mx-auto">
           <header className="mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-wp-contrast mb-4">
-              Precision Rifle Equipment Recommendations
+              Equipment Requirements for PRS Style Matches
             </h1>
             <div className="flex items-center text-wp-contrast/70 mb-8">
-              <time dateTime="2025-07-23" className="text-sm">
-                July 23, 2025
+              <time dateTime="2020-03-15" className="text-sm">
+                March 15, 2020
               </time>
             </div>
           </header>
           
           <div className="prose prose-lg max-w-none text-wp-contrast">
             <div className="mb-12">
-              <p className="text-xl font-semibold mb-4">Getting started in precision rifle shooting can be overwhelming with the vast array of equipment options available. This guide provides recommendations for both beginners and experienced shooters.</p>
-              <p>Remember that while quality equipment is important, proper training and practice are equally crucial to your success. Start with what you can afford and upgrade as you progress in the sport.</p>
+              <p className="text-xl font-semibold mb-4">New to precision rifle competitions? Here's everything you need to get started with Bolt Gun Nation matches.</p>
+              <p className="mb-4">The good news is that you don't need specialized or expensive equipment to begin competing. Any rifle capable of consistently grouping within one inch at 100 yards will be sufficient for your first matches.</p>
+              <p>While heavier rifles and smaller calibers can provide competitive advantages, we strongly encourage new shooters to use their existing equipment if it meets the minimum requirements. Your initial matches should focus on learning the fundamentals, finding targets, and understanding match procedures rather than optimizing gear.</p>
             </div>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Rifles</h2>
+              <h2 className="text-3xl font-bold mb-6">Required Equipment</h2>
               
-              <h3 className="text-2xl font-semibold mb-4">For Beginners</h3>
-              <p className="mb-6">If you're new to precision rifle shooting, consider these options:</p>
+              <h3 className="text-2xl font-semibold mb-4">Rifle</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Ruger Precision Rifle</strong> - Excellent value, available in multiple calibers, and ready to compete out of the box.</li>
-                <li><strong>Bergara B-14 HMR</strong> - Known for excellent barrels and smooth actions at a reasonable price point.</li>
-                <li><strong>Tikka T3x</strong> - Renowned for their smooth actions and accuracy, a great foundation for a competition rifle.</li>
-                <li><strong>Savage 110 Elite Precision</strong> - Features the AccuTrigger and offers great accuracy for the price.</li>
+                <li>Any rifle in good working condition that can group within 1 MOA (1" at 100 yards)</li>
+                <li>A detachable box magazine is highly recommended (10-12 round capacity is ideal)</li>
               </ul>
               
-              <h3 className="text-2xl font-semibold mb-4">For Experienced Shooters</h3>
-              <p className="mb-6">As you progress, you might consider these options:</p>
+              <h3 className="text-2xl font-semibold mb-4">Optics</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Custom Actions</strong> - Defiance, Impact Precision, or American Rifle Company offer premium actions.</li>
-                <li><strong>Premium Barrels</strong> - Bartlein, Krieger, or Proof Research carbon fiber barrels for weight savings.</li>
-                <li><strong>Chassis Systems</strong> - MDT, KRG, or MPA chassis systems offer excellent ergonomics and adjustability.</li>
+                <li>First focal plane scopes are preferred, but any quality scope with adjustable turrets will work</li>
+                <li>Must have sufficient adjustment range for the distances you'll be shooting (typically out to 1200 yards)</li>
               </ul>
               
-              <h3 className="text-2xl font-semibold mb-4">Caliber Recommendations</h3>
-              <p className="mb-6">For those new to the sport, we recommend:</p>
+              <h3 className="text-2xl font-semibold mb-4">Ammunition</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>6.5 Creedmoor</strong> - Excellent balance of recoil, barrel life, and ballistic performance. Factory ammunition is widely available.</li>
-                <li><strong>.308 Winchester</strong> - Abundant factory ammunition, decent barrel life, and adequate for most competition distances.</li>
-              </ul>
-              <p className="mb-6">For experienced shooters looking for more performance:</p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>6mm Creedmoor</strong> - Lower recoil than 6.5CM with excellent ballistics, though with shorter barrel life.</li>
-                <li><strong>6mm Dasher</strong> - Popular among top competitors for its accuracy and wind performance.</li>
-                <li><strong>6.5 PRC</strong> - More powerful than 6.5CM, excellent for longer ranges.</li>
-              </ul>
-            </section>
-            
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Optics</h2>
-              
-              <p className="mb-6">Quality optics are crucial for precision rifle shooting. Don't skimp here - buy the best you can afford.</p>
-              
-              <h3 className="text-2xl font-semibold mb-4">Entry-Level Options</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Vortex Viper PST Gen II</strong> - Excellent value with good glass and features.</li>
-                <li><strong>Athlon Cronus BTR</strong> - Great glass quality for the price.</li>
-                <li><strong>SWFA SS HD</strong> - Simple but robust fixed-power options.</li>
+                <li>.308 caliber or smaller, with velocity less than 3200 feet per second</li>
+                <li>Must remain supersonic to 1200+ yards for reliable target impacts</li>
+                <li>Bring at least 70 rounds for Del Norte matches or 60 rounds for Zia matches</li>
+                <li>Extra ammunition is recommended for re-shoots, pre-match zeroing, and practice</li>
               </ul>
               
-              <h3 className="text-2xl font-semibold mb-4">Mid-Range Options</h3>
+              <h3 className="text-2xl font-semibold mb-4">Safety Equipment & Essentials</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Vortex Razor HD Gen II</strong> - Outstanding glass and tracking.</li>
-                <li><strong>Nightforce NX8</strong> - Compact but feature-rich.</li>
-                <li><strong>Leupold Mark 5HD</strong> - Excellent tracking and clarity.</li>
-              </ul>
-              
-              <h3 className="text-2xl font-semibold mb-4">Premium Options</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Schmidt & Bender PMII</strong> - The gold standard for many competitors.</li>
-                <li><strong>Kahles K624i</strong> - Exceptional glass and features.</li>
-                <li><strong>Tangent Theta</strong> - Incredible optical clarity and precise adjustments.</li>
-              </ul>
-              
-              <h3 className="text-2xl font-semibold mb-4">Recommended Features</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Magnification Range</strong> - 5-25x or similar is ideal for most competitions.</li>
-                <li><strong>First Focal Plane (FFP)</strong> - Reticle subtensions remain valid at all magnifications.</li>
-                <li><strong>Exposed Turrets</strong> - For quick and easy adjustments during stages.</li>
-                <li><strong>Zero Stop</strong> - Allows quick return to your zero.</li>
-                <li><strong>Illuminated Reticle</strong> - Helpful in low light conditions.</li>
+                <li><strong>Bipod</strong> - Required for prone shooting stages</li>
+                <li><strong>Hearing Protection</strong> - Electronic or passive ear protection</li>
+                <li><strong>Eye Protection</strong> - ANSI-rated safety glasses</li>
+                <li><strong>Ballistic Data</strong> - DOPE (Data On Previous Engagements) for your rifle out to 1200 yards</li>
+                <li><strong>Ballistic Calculator</strong> - Phone app or dedicated device (Kestrel, etc.)</li>
+                <li><strong>Food and Water</strong> - Matches can last all day; staying hydrated improves shooting performance, especially in our hot, dry range conditions</li>
               </ul>
             </section>
             
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Support Equipment</h2>
+              <h2 className="text-3xl font-bold mb-6">Recommended Optional Equipment</h2>
+              <p className="mb-6">Don't worry if you don't have all of these items. Experienced competitors are typically happy to help new shooters and often loan equipment. This gives you a chance to try different gear before investing in your own.</p>
               
-              <h3 className="text-2xl font-semibold mb-4">Bipods</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Atlas BT10/BT46</strong> - Industry standard for stability and features.</li>
-                <li><strong>MDT CKYE-POD</strong> - Excellent stability for heavier rifles.</li>
-                <li><strong>Harris S-BRM</strong> - Affordable option for beginners.</li>
-              </ul>
-              
-              <h3 className="text-2xl font-semibold mb-4">Rear Bags</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Armageddon Gear Game Changer</strong> - Versatile and stable.</li>
-                <li><strong>Wiebad Fortune Cookie</strong> - Excellent for various positions.</li>
-                <li><strong>TAB Gear Rear Bag</strong> - Durable and well-made.</li>
-              </ul>
-              
-              <h3 className="text-2xl font-semibold mb-4">Data Management</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Kestrel 5700 Elite</strong> - Industry standard ballistic calculator with weather station.</li>
-                <li><strong>Applied Ballistics Mobile App</strong> - Excellent software for ballistic calculations.</li>
-                <li><strong>Weatherflow WEATHERmeter</strong> - Affordable weather data collection.</li>
+                <li><strong>Rear Support Bag</strong> - Provides stability for the rifle's buttstock during shooting</li>
+                <li><strong>Front Support Bag</strong> - Used to stabilize the rifle on barricades and other props</li>
+                <li><strong>Binoculars</strong> - Helpful for spotting targets and observing impacts</li>
+                <li><strong>Rifle Sling</strong> - While rarely needed for shooting positions, very useful for carrying your rifle between stages</li>
+                <li><strong>Range Bag/Pack</strong> - Highly recommended for transporting your equipment between stages</li>
+                <li><strong>Spare Magazines</strong> - Quick reloads can save valuable time during stages</li>
+                <li><strong>DOPE Management Tools</strong> - Methods to record target data during stages (masking tape on the rifle forearm works well)</li>
+                <li><strong>Wrist Coach</strong> - For quick reference to stage information and target data</li>
+                <li><strong>Muzzle Brake or Suppressor</strong> - Reduces recoil and can improve follow-up shots</li>
               </ul>
             </section>
             
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Ammunition</h2>
+              <h2 className="text-3xl font-bold mb-6">Focus on Skills, Not Just Gear</h2>
               
-              <h3 className="text-2xl font-semibold mb-4">Factory Options</h3>
+              <p className="mb-6">For your first few matches, concentrate on developing these fundamental skills rather than acquiring perfect equipment:</p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Hornady Match</strong> - Consistent and widely available.</li>
-                <li><strong>Federal Gold Medal</strong> - Excellent accuracy across many calibers.</li>
-                <li><strong>Nosler Match Grade</strong> - High-quality components and consistency.</li>
+                <li>Understanding match flow and stage procedures</li>
+                <li>Efficiently finding and identifying targets</li>
+                <li>Building position-shooting fundamentals</li>
+                <li>Managing time effectively during stages</li>
+                <li>Reading wind conditions and making appropriate adjustments</li>
               </ul>
               
-              <h3 className="text-2xl font-semibold mb-4">Handloading</h3>
-              <p className="mb-6">Many competitive shooters eventually move to handloading for the ultimate in consistency and performance. Key components include:</p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Brass</strong> - Lapua, Alpha Munitions, or Peterson for premium options.</li>
-                <li><strong>Bullets</strong> - Berger, Sierra, or Hornady match bullets.</li>
-                <li><strong>Powder</strong> - Hodgdon, Vihtavuori, or Alliant match-grade powders.</li>
-                <li><strong>Primers</strong> - Federal, CCI, or SK match primers.</li>
-              </ul>
-            </section>
-            
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-6">Accessories</h2>
+              <p className="mb-6">The Bolt Gun Nation community is known for its supportive environment. Don't hesitate to ask questions and seek advice from more experienced shooters. Most competitors are eager to share their knowledge and help newcomers enjoy the sport.</p>
               
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Range Finder</strong> - Sig Kilo, Vortex, or Leupold models are popular.</li>
-                <li><strong>Shooting Mat</strong> - MidwayUSA, Voodoo Tactical, or TAB Gear for comfort during prone stages.</li>
-                <li><strong>Spotting Scope</strong> - Vortex Razor, Leupold Mark 4, or Nightforce TS-82 for target identification.</li>
-                <li><strong>Hearing Protection</strong> - Electronic earmuffs or custom molded plugs.</li>
-                <li><strong>Shooting Gloves</strong> - PIG, Mechanix, or SKD tactical gloves for protection without sacrificing dexterity.</li>
-                <li><strong>Rifle Case</strong> - Pelican, SKB, or Boyt hard cases for travel.</li>
-              </ul>
+              <p className="mb-6">As you gain experience, you'll naturally identify which equipment upgrades will benefit your particular shooting style and competition goals.</p>
             </section>
             
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-6">Final Thoughts</h2>
               
-              <p className="mb-6">Remember that the best equipment is what works for you. Don't get caught up in the "gear race" - focus on developing your skills and understanding your equipment thoroughly.</p>
-              <p className="mb-6">Many top shooters started with modest equipment and upgraded gradually as they identified specific needs. Attend matches, talk to experienced shooters, and try different equipment when possible before making major purchases.</p>
-              <p className="mb-6">Most importantly, practice regularly with whatever equipment you have. Consistent practice with modest gear will outperform sporadic practice with the most expensive setup.</p>
+              <p className="mb-6">Precision rifle competitions test mental discipline and shooting fundamentals as much as they showcase equipment. A skilled shooter with basic gear will consistently outperform an unskilled shooter with the most expensive setup.</p>
+              
+              <p className="mb-6">Come prepared with the required equipment, stay hydrated, and focus on learning and improving with each stage. The Bolt Gun Nation community welcomes shooters of all experience levels, and we look forward to seeing you on the range!</p>
             </section>
           </div>
           

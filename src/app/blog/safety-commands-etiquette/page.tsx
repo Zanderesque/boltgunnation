@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: 'Safety, Range Commands & Etiquette',
     description: 'Essential safety guidelines, range commands, and etiquette for precision rifle competitions.',
     type: 'article',
-    publishedTime: '2025-07-23',
+    publishedTime: '2020-10-12',
   },
 };
 
@@ -21,8 +21,8 @@ export default function SafetyCommandsEtiquettePage() {
               Safety, Range Commands & Etiquette
             </h1>
             <div className="flex items-center text-wp-contrast/70 mb-8">
-              <time dateTime="2025-07-23" className="text-sm">
-                July 23, 2025
+              <time dateTime="2020-10-12" className="text-sm">
+                October 12, 2020
               </time>
             </div>
           </header>
