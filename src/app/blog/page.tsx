@@ -8,17 +8,29 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    title: 'Hello world!',
-    slug: 'hello-world',
-    date: 'March 7, 2023',
-    excerpt: 'Welcome to WordPress. This is your first post. Edit or delete it, then start writing!',
+    title: 'Training Techniques for Precision Rifle',
+    slug: 'training-techniques',
+    date: 'July 23, 2025',
+    excerpt: 'Consistent, focused practice is the key to improving your precision rifle skills. This guide outlines effective training methods for shooters of all levels.',
+  },
+  {
+    title: 'Precision Rifle Equipment Recommendations',
+    slug: 'equipment-recommendations',
+    date: 'July 23, 2025',
+    excerpt: 'Getting started in precision rifle shooting can be overwhelming with the vast array of equipment options available. This guide provides recommendations for both beginners and experienced shooters.',
+  },
+  {
+    title: 'Safety, Range Commands & Etiquette',
+    slug: 'safety-commands-etiquette',
+    date: 'June 1, 2025',
+    excerpt: 'Essential safety guidelines, range commands, and etiquette for precision rifle competitions. All participants and spectators are safety officers.',
   },
   {
     title: 'PRS 1st-timer',
     slug: 'prs-1st-timer',
     date: 'July 21, 2025',
     excerpt: 'Add your post description here...',
-  }
+  },
 ];
 
 const pages = [

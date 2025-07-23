@@ -75,3 +75,17 @@
 - UX/UI Designer for accessibility and design improvements
 - Content Strategist for SEO and content optimization
 - DevOps Engineer for development workflow setup (part-time)
+
+
+Clean Build and Cache:
+Remove the .next directory to clear any stale build artifacts
+Clear browser cache to ensure fresh CSS is loaded
+Verify CSS Processing Pipeline:
+Ensure the CSS processing pipeline is correctly configured in Next.js
+Check that the Tailwind directives are being properly processed
+Fix Import Order:
+Verify that globals.css is being imported correctly in the layout.tsx file
+Ensure CSS is being loaded before any components are rendered
+Enforce Consistent Styling:
+Apply consistent Tailwind classes across all components
+Use the WordPress color variables consistently

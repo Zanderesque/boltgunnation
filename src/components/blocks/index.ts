@@ -3,9 +3,9 @@
 export { default as Header } from './Header';
 export { default as Navigation } from './Navigation';
 export { default as SiteTitle } from './SiteTitle';
+export { default as Footer } from './Footer';
 
 // TODO: Create these components as needed
-// export { default as Footer } from './Footer';
 // export { default as PostContent } from './PostContent';
 // export { default as PostTitle } from './PostTitle';
 // export { default as PostFeaturedImage } from './PostFeaturedImage';
