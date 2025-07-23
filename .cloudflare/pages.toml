@@ -1,0 +1,6 @@
+# Cloudflare Pages Build Configuration
+# This overrides the default build settings for Cloudflare Pages
+
+[build]
+command = "npm install && npm run build"
+output_directory = ".next"
