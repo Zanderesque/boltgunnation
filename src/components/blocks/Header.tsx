@@ -34,11 +34,11 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               height={40}
               className="h-10 w-10"
             />
-            <SiteTitle
-              className="text-xl font-bold tracking-tight text-wp-contrast"
-              headingLevel="h1"
-            />
           </Link>
+          <SiteTitle
+            className="text-xl font-bold tracking-tight text-wp-contrast"
+            headingLevel="h1"
+          />
         </div>
         <Navigation items={navigationItems} />
       </div>

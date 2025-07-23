@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 interface SiteTitleProps {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
@@ -29,13 +28,10 @@ export default function SiteTitle({
   return (
     <div className="flex flex-col gap-1">
       <HeadingTag className={`text-2xl font-bold ${className}`}>
-        <Link 
-          href="/" 
-          className="text-wp-contrast hover:text-wp-accent-1 transition-colors relative group"
-        >
+        <span className="text-wp-contrast hover:text-wp-accent-1 transition-colors relative group">
           {siteTitle}
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-wp-accent-1 transition-all duration-300 group-hover:w-full"></span>
-        </Link>
+        </span>
       </HeadingTag>
       
       {showTagline && (
