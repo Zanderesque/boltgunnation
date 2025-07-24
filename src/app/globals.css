@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f5f5;
-  --foreground: #1a1a1a;
+  --background: #f8fafc;
+  --foreground: #1e293b;
   
   /* Theme Color Variables - Precision Rifle Inspired */
-  --wp-base: #f5f5f5;
-  --wp-contrast: #1a1a1a;
-  --wp-accent-1: #2b5797; /* Steel blue - representing precision */
-  --wp-accent-2: #d9d9d9; /* Light gray for cards - representing focus */
-  --wp-accent-3: #b22222; /* Firebrick red - representing competition */
-  --wp-accent-4: #3a5311; /* Forest green - representing New Mexico landscape */
+  --wp-base: #f8fafc;
+  --wp-contrast: #1e293b;
+  --wp-accent-1: #f59e0b; /* Amber - representing precision */
+  --wp-accent-2: #ffffff; /* White for cards - representing focus */
+  --wp-accent-3: #dc2626; /* Red - representing competition */
+  --wp-accent-4: #475569; /* Slate - representing precision and focus */
 }
 
 @theme inline {
@@ -30,36 +30,33 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2a1f2d; /* Deep desert night purple-brown */
-    --foreground: #f5f5f5;
-    --wp-base: #2a1f2d;
-    --wp-contrast: #f5f5f5;
-    --wp-accent-1: #4b77b8; /* Lighter steel blue for dark mode */
-    --wp-accent-2: #3a2f3d; /* Dark purple-brown for cards in dark mode */
-    --wp-accent-3: #d64545; /* Brighter red for dark mode */
-    --wp-accent-4: #5c832a; /* Lighter green for dark mode */
+    --background: #0f172a; /* Dark slate background */
+    --foreground: #f8fafc;
+    --wp-base: #0f172a;
+    --wp-contrast: #f8fafc;
+    --wp-accent-1: #fbbf24; /* Lighter amber for dark mode */
+    --wp-accent-2: #1e293b; /* Dark slate for cards in dark mode */
+    --wp-accent-3: #ef4444; /* Brighter red for dark mode */
+    --wp-accent-4: #94a3b8; /* Lighter slate for dark mode */
   }
   
   body {
-    background: linear-gradient(135deg, #3a1f3d, #1a1625, #4d2e35);
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
     background-size: 200% 200%;
     animation: gradientShift 15s ease infinite;
   }
   
-  /* New Mexican night sky-inspired bold pattern overlay */
+  /* Geometric pattern overlay for dark mode */
   body::before {
-    background-image: 
-      radial-gradient(circle at 10% 10%, rgba(75, 119, 184, 0.15) 0%, transparent 60%),
-      radial-gradient(circle at 50% 50%, rgba(214, 69, 69, 0.12) 0%, transparent 70%),
-      radial-gradient(circle at 80% 80%, rgba(92, 131, 42, 0.15) 0%, transparent 60%),
-      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50L20 20M50 50L80 20M50 50L80 80M50 50L20 80' stroke='%23475569' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+    background-size: 50px 50px;
+    opacity: 0.05;
   }
 }
 
 body {
-  background: linear-gradient(135deg, #f5f5f5, #e8e3d3, #d9d2c5);
-  background-size: 200% 200%;
-  animation: gradientShift 15s ease infinite;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  background-size: 100% 100%;
   position: relative;
   color: var(--wp-contrast);
   font-family: Arial, Helvetica, sans-serif;
@@ -72,7 +69,7 @@ body {
   100% { background-position: 0% 50% }
 }
 
-/* New Mexican landscape-inspired bold pattern overlay */
+/* Geometric pattern overlay */
 body::before {
   content: "";
   position: absolute;
@@ -80,16 +77,38 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(58, 83, 17, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(178, 34, 34, 0.08) 0%, transparent 60%),
-    repeating-linear-gradient(45deg, rgba(58, 83, 17, 0.03) 0px, rgba(58, 83, 17, 0.03) 1px, transparent 1px, transparent 10px),
-    repeating-linear-gradient(135deg, rgba(178, 34, 34, 0.03) 0px, rgba(178, 34, 34, 0.03) 1px, transparent 1px, transparent 10px);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50L20 20M50 50L80 20M50 50L80 80M50 50L20 80' stroke='%23334155' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+  background-size: 50px 50px;
   pointer-events: none;
   z-index: -1;
+  opacity: 0.03;
 }
 
 /* Custom animation delays for staggered effects */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
 .animation-delay-2000 {
   animation-delay: 2s;
 }
@@ -102,7 +121,7 @@ body::before {
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(241, 245, 249, 0.2);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -122,7 +141,7 @@ html {
 }
 
 .gradient-text-animated {
-  background: linear-gradient(-45deg, #3b82f6, #2563eb, #1d4ed8, #3b82f6);
+  background: linear-gradient(-45deg, #f59e0b, #ea580c, #dc2626, #f59e0b);
   background-size: 400% 400%;
   animation: gradient-shift 3s ease infinite;
   -webkit-background-clip: text;
@@ -132,7 +151,7 @@ html {
 
 /* Enhanced button hover effects */
 .btn-glow:hover {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
   transition: all 0.3s ease;
 }
 
@@ -156,22 +175,23 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(229, 229, 229, 0.8);
+  background: rgba(241, 245, 249, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  background: linear-gradient(to bottom, #f59e0b, #dc2626);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+  background: linear-gradient(to bottom, #fbbf24, #ef4444);
 }
 
-/* Card styling to match sponsors page */
+/* Card styling to match points-race page */
 .card {
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -184,48 +204,105 @@ html {
 
 /* Section styling */
 .section-container {
-  background-color: var(--wp-accent-2);
-  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
   padding: 2rem;
   margin: 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Blue link styling */
-.blue-link {
+/* Link styling */
+.accent-link {
   color: var(--wp-accent-1);
   text-decoration: none;
   transition: color 0.2s ease;
+  font-weight: 500;
 }
 
-.blue-link:hover {
+.accent-link:hover {
   color: var(--wp-accent-3);
   text-decoration: underline;
 }
 
 @media (prefers-color-scheme: dark) {
   .card {
-    background-color: #2d2d2d;
+    background-color: #1e293b;
+    border-color: #334155;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-container {
+    background-color: #1e293b;
+    border-color: #334155;
   }
 }
 
-/* New Mexico-inspired decorative elements */
-.nm-zia-sun {
-  position: relative;
+/* Badge styling */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
 }
 
-.nm-zia-sun::after {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='20' fill='%23d64545' fill-opacity='0.2'/%3E%3Cpath d='M50 0 L50 100 M0 50 L100 50 M14.6 14.6 L85.4 85.4 M14.6 85.4 L85.4 14.6' stroke='%23d64545' stroke-width='3' stroke-opacity='0.2'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.8;
-  z-index: -1;
-  right: -20px;
-  top: -20px;
+.badge-amber {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-red {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-slate {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* Button styling */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #f59e0b, #dc2626);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+  background-color: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading styles */
+.heading-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #f59e0b, #dc2626);
 }
 
 @tailwind base;

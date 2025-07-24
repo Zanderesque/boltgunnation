@@ -1,27 +1,42 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ *
+ * Next.js configuration for Bolt Gun Nation
+ * - Uses 'standalone' for local development
+ * - Uses 'export' for Cloudflare Pages deployment (respects 25MB file size limit)
+ */
+
+// Determine if we're in a Cloudflare Pages environment
+const isCloudflarePages = process.env.CF_PAGES === 'true';
+
 const nextConfig = {
+  // Disable ESLint during builds for speed
   eslint: {
-    // Disable ESLint during builds
     ignoreDuringBuilds: true,
   },
+
+  // Disable TypeScript errors during builds
   typescript: {
-    // Disable TypeScript errors during builds
     ignoreBuildErrors: true,
   },
-  // Use the correct configuration key for external packages
+
+  // External packages configuration
   serverExternalPackages: [],
 
-  // Change from 'standalone' to 'export' for Cloudflare Pages
-  output: 'export',
+  // Output mode - conditional based on environment
+  // - 'standalone' for local development (better DX)
+  // - 'export' for Cloudflare Pages (static output, smaller size)
+  output: isCloudflarePages ? 'export' : 'standalone',
 
-  // Disable image optimization to reduce build size
+  // Image optimization settings
   images: {
-    unoptimized: true,
+    unoptimized: true, // Required for 'export' mode
+    domains: [], // Add domains if you use remote images
   },
 
-  // Disable webpack cache to avoid large files
+  // Webpack configuration
   webpack: (config, { dev, isServer }) => {
-    // Disable persistent caching for production builds
+    // Disable persistent caching for production builds to reduce size
     if (!dev) {
       config.cache = false;
     }
@@ -29,15 +44,11 @@ const nextConfig = {
     return config;
   },
 
-  // Allow cross-origin requests during development
-  allowedDevOrigins: [
-    '10.0.0.59', // Add the IP address from the warning
-    'localhost',
-  ],
-
-  // Experimental features that are supported in Next.js 15
+  // Development server configuration
+  // Note: To change host/port, use CLI args: `next dev -H 0.0.0.0 -p 3000`
+  // or set environment variables: `HOST=0.0.0.0 PORT=3000 next dev`
   experimental: {
-    // Improve package imports for components
+    // Optimize imports for better performance
     optimizePackageImports: ['@heroicons/react'],
   },
 };
