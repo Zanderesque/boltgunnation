@@ -16,27 +16,21 @@ import {
   PlayIcon,
   CheckBadgeIcon
 } from '@heroicons/react/24/outline';
+import { getUpcomingEvents } from '@/lib/events';
+import EventCard from '@/components/events/EventCard';
+import Link from 'next/link';
+import Typography from '@/components/ui/Typography';
+import AnimatedContainer from '@/components/ui/AnimatedContainer';
+import Button from '@/components/ui/Button';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { sectionStyles, spacingStyles } from '@/lib/styles';
 
 /**
  * Bolt Gun Nation Homepage - Modern Precision Rifle Competition Community
  * Mission: Use competition to improve NM precision rifle shooters' skills
- * Using WordPress color variables and consistent Tailwind classes
+ * Using standardized components for consistent styling and animations
  */
 export default function HomePage() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
   const features = [
     {
       icon: TrophyIcon,
@@ -55,29 +49,8 @@ export default function HomePage() {
     }
   ];
 
-  const upcomingEvents = [
-    { 
-      date: "Feb", 
-      day: "15", 
-      event: "Monthly Precision Match", 
-      location: "Santa Fe Range",
-      participants: "24 registered"
-    },
-    { 
-      date: "Mar", 
-      day: "8", 
-      event: "Long Range Workshop", 
-      location: "Albuquerque",
-      participants: "12 spots left"
-    },
-    { 
-      date: "Apr", 
-      day: "12", 
-      event: "Regional Qualifier", 
-      location: "Las Cruces",
-      participants: "Open registration"
-    }
-  ];
+  // Get upcoming events from our centralized data model
+  const upcomingEvents = getUpcomingEvents(3);
 
   const stats = [
     { number: "250+", label: "Active Members" },
@@ -97,218 +70,207 @@ export default function HomePage() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="container mx-auto px-6 py-20 lg:py-32">
-          <motion.div 
+        <section className={`${sectionStyles.base} py-20 lg:py-32`}>
+          <AnimatedContainer 
             className="max-w-6xl mx-auto"
-            variants={staggerContainer}
-            initial="initial"
-            animate="animate"
+            variant="staggerContainer"
+            stagger={true}
           >
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <motion.div variants={fadeInUp} className="mb-8">
+                <AnimatedContainer variant="fadeInUp" className="mb-8">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-wp-accent-1/20 text-wp-accent-1 font-semibold text-sm">
                     <TrophyIcon className="h-4 w-4 mr-2 text-wp-accent-1" />
                     New Mexico's Premier Precision Rifle Community
                   </div>
-                </motion.div>
+                </AnimatedContainer>
                 
-                <motion.h1 
-                  variants={fadeInUp}
-                  className="text-5xl lg:text-7xl font-bold mb-8 leading-tight text-black"
+                <Typography 
+                  variant="h1" 
+                  animate={true} 
+                  animationVariant="fadeInUp" 
+                  animationDelay={0.1}
+                  gradient={true}
+                  className="mb-8 leading-tight"
                 >
-                  <span className="text-wp-contrast">
-                    Forge Excellence
-                  </span>
-                  <br />
-                  <span className="text-wp-accent-1">
-                    Through Competition
-                  </span>
-                </motion.h1>
-                
-                <motion.p 
-                  variants={fadeInUp}
-                  className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl"
-                >
-                  Join New Mexico's most dedicated precision rifle community. We use structured competition to sharpen skills, build lasting fellowship, and prepare our members for regional and national championships.
-                </motion.p>
-                
-                <motion.div 
-                  variants={fadeInUp}
-                  className="flex flex-col sm:flex-row gap-4"
-                >
-                  <a
-                    href="https://www.facebook.com/groups/339663940504983/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group bg-wp-accent-1 text-wp-contrast px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-wp-accent-1/25 transition-all duration-300 flex items-center justify-center"
-                  >
-                    Join Our Community
-                    <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <a 
-                    href="/contact"
-                    className="group bg-white hover:bg-slate-50 text-black border border-slate-200 font-semibold py-3 px-6 rounded-lg inline-flex items-center transition-all duration-300"
-                  >
-                    Learn More
-                  </a>
-                </motion.div>
-              </div>
+                  Elevate Your <br />Precision Rifle Skills
+                </Typography>
 
-              {/* Stats Grid */}
-              <motion.div 
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="grid grid-cols-2 gap-6"
+                <AnimatedContainer variant="fadeInUp" delay={0.2}>
+                  <Typography variant="bodyLg" className="mb-8 text-wp-contrast/80">
+                    Join New Mexico's most dedicated precision rifle community. 
+                    We use competition to drive skill development and foster 
+                    a supportive community of marksmen.
+                  </Typography>
+                </AnimatedContainer>
+
+                <AnimatedContainer variant="fadeInUp" delay={0.3} className="flex flex-wrap gap-4">
+                  <Button 
+                    variant="primary" 
+                    href="/events" 
+                    icon={<CalendarDaysIcon className="w-5 h-5" />}
+                  >
+                    Upcoming Events
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    href="/bolt-gun-points-race"
+                    icon={<TrophyIcon className="w-5 h-5" />}
+                  >
+                    Points Race Series
+                  </Button>
+                </AnimatedContainer>
+              </div>
+              
+              <AnimatedContainer 
+                variant="fadeInScale" 
+                delay={0.4} 
+                className="relative hidden lg:block"
               >
-                {stats.map((stat, index) => (
-                  <div key={index} className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
-                    <div className="text-3xl font-bold text-wp-accent-1 mb-2">{stat.number}</div>
-                    <div className="text-sm font-medium text-slate-600">{stat.label}</div>
+                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-wp-accent-1/20 to-wp-accent-2/20 p-1">
+                  <div className="w-full h-full rounded-xl overflow-hidden">
+                    <img 
+                      src="/media/images/uploads/2023/03/50-BMG-Shockwave-1536x864.jpg" 
+                      alt="Precision rifle shooter in competition" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                ))}
-              </motion.div>
+                </div>
+                
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-lg p-4 w-48">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-wp-accent-1/20 rounded-full p-2">
+                      <TrophyIcon className="h-6 w-6 text-wp-accent-1" />
+                    </div>
+                    <div>
+                      <Typography variant="h6" className="m-0">Points Race</Typography>
+                      <Typography variant="bodySm" className="text-wp-contrast/70">Next event: Aug 15</Typography>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedContainer>
             </div>
-          </motion.div>
+          </AnimatedContainer>
         </section>
 
         {/* Features Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-black">
-                The Path to Mastery
-              </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Every expert was once a beginner. Every champion was forged through dedication, practice, and the crucible of competition.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="grid lg:grid-cols-3 gap-8"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
+        <section className={`${sectionStyles.base} ${sectionStyles.withBackground}`}>
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader 
+              title="Why Join Bolt Gun Nation" 
+              subtitle="We're dedicated to improving precision rifle skills through competition and community"
+              centered={true}
+            />
+            
+            <AnimatedContainer 
+              variant="staggerContainer" 
+              stagger={true} 
+              className="grid md:grid-cols-3 gap-8 mt-16"
             >
               {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="group bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-8 hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-500"
-                >
-                  <div className="bg-wp-accent-1/10 rounded-xl p-4 inline-block mb-6">
-                    <feature.icon className="h-8 w-8 text-wp-accent-1" />
+                <AnimatedContainer key={index} variant="fadeInUp">
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-wp-contrast/10 h-full">
+                    <div className="bg-wp-accent-1/10 rounded-full p-3 inline-block mb-4">
+                      <feature.icon className="h-6 w-6 text-wp-accent-1" />
+                    </div>
+                    <Typography variant="h4" className="mb-2">{feature.title}</Typography>
+                    <Typography variant="body">{feature.description}</Typography>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-black">{feature.title}</h3>
-                  <p className="text-slate-600">{feature.description}</p>
-                </motion.div>
+                </AnimatedContainer>
               ))}
-            </motion.div>
+            </AnimatedContainer>
           </div>
         </section>
 
-        {/* Upcoming Events Section */}
-        <section className="py-20 bg-wp-base">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-16 flex flex-col md:flex-row md:items-end justify-between"
+        {/* Events Section */}
+        <section className={sectionStyles.base}>
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader 
+              title="Upcoming Events" 
+              subtitle="Join us at our next competition or training session"
+            />
+            
+            <AnimatedContainer 
+              variant="staggerContainer" 
+              stagger={true} 
+              className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              <div>
-                <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-wp-contrast">Upcoming Events</h2>
-                <p className="text-xl text-wp-contrast/70 max-w-2xl">
-                  Join us for our next competition or training event. All skill levels welcome.
-                </p>
-              </div>
-              <a href="/events" className="inline-flex items-center text-wp-accent-1 font-semibold group mt-6 md:mt-0">
-                View all events
-                <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-
-            <motion.div 
-              className="grid md:grid-cols-3 gap-6"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              {upcomingEvents.map((event, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="bg-wp-base border border-wp-contrast/10 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+              {upcomingEvents.length > 0 ? (
+                upcomingEvents.map((event, index) => (
+                  <EventCard key={event.id} event={event} index={index} />
+                ))
+              ) : (
+                <AnimatedContainer variant="fadeIn" className="md:col-span-2 lg:col-span-3">
+                  <Typography variant="muted" className="text-center py-8">
+                    No upcoming events scheduled at this time.
+                  </Typography>
+                </AnimatedContainer>
+              )}
+              
+              <AnimatedContainer variant="fadeInUp" delay={0.2} className="flex justify-center mt-8 md:col-span-2 lg:col-span-3">
+                <Button 
+                  variant="secondary"
+                  href="/events"
+                  icon={<ArrowRightIcon className="w-5 h-5" />}
+                  iconPosition="right"
                 >
-                  <div className="flex">
-                    <div className="bg-wp-accent-1 text-wp-contrast p-6 flex flex-col items-center justify-center">
-                      <span className="text-sm font-medium">{event.date}</span>
-                      <span className="text-2xl font-bold">{event.day}</span>
-                    </div>
-                    <div className="p-6 flex-1">
-                      <h3 className="font-bold text-wp-contrast mb-2">{event.event}</h3>
-                      <div className="flex items-center text-wp-contrast/70 text-sm mb-1">
-                        <MapIcon className="h-4 w-4 mr-1" />
-                        {event.location}
-                      </div>
-                      <div className="flex items-center text-wp-contrast/70 text-sm">
-                        <UsersIcon className="h-4 w-4 mr-1" />
-                        {event.participants}
-                      </div>
-                    </div>
+                  View All Events
+                </Button>
+              </AnimatedContainer>
+            </AnimatedContainer>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className={`${sectionStyles.base} bg-wp-accent-1/5`}>
+          <div className="max-w-6xl mx-auto">
+            <AnimatedContainer 
+              variant="staggerContainer" 
+              stagger={true} 
+              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            >
+              {stats.map((stat, index) => (
+                <AnimatedContainer key={index} variant="fadeInUp">
+                  <div className="text-center">
+                    <Typography variant="h2" gradient={true} className="mb-2">{stat.number}</Typography>
+                    <Typography variant="muted">{stat.label}</Typography>
                   </div>
-                </motion.div>
+                </AnimatedContainer>
               ))}
-            </motion.div>
+            </AnimatedContainer>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-wp-accent-1/10">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-wp-base border border-wp-contrast/10 rounded-3xl p-8 md:p-12 lg:p-16 text-center max-w-5xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-wp-contrast">
-                Ready to Join New Mexico's Premier Precision Rifle Community?
-              </h2>
-              <p className="text-xl text-wp-contrast/70 mb-10 max-w-3xl mx-auto">
-                Whether you're a seasoned competitor or just getting started, Bolt Gun Nation has a place for you. Join us and take your precision shooting to the next level.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://www.facebook.com/groups/339663940504983/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-wp-accent-1 text-wp-contrast px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-wp-accent-1/25 transition-all duration-300 flex items-center justify-center"
-                >
-                  Join Our Community
-                  <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a 
-                  href="/contact"
-                  className="group bg-wp-base border border-wp-contrast/10 text-wp-contrast px-8 py-4 rounded-xl font-semibold hover:bg-wp-contrast/5 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-                >
-                  Contact Us
-                </a>
-              </div>
-            </motion.div>
-          </div>
+        <section className={sectionStyles.base}>
+          <AnimatedContainer variant="fadeInScale" className="max-w-4xl mx-auto text-center">
+            <Typography variant="h2" gradient={true} className="mb-6">
+              Ready to Join New Mexico's Premier Precision Rifle Community?
+            </Typography>
+            
+            <Typography variant="bodyLg" className="mb-8 text-wp-contrast/80">
+              Whether you're a seasoned competitor or just getting started, 
+              Bolt Gun Nation offers the resources, community, and competitions 
+              to take your precision rifle skills to the next level.
+            </Typography>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                variant="primary" 
+                href="/events" 
+                size="lg"
+              >
+                Join Our Next Event
+              </Button>
+              <Button 
+                variant="outline" 
+                href="/about" 
+                size="lg"
+              >
+                Learn More About Us
+              </Button>
+            </div>
+          </AnimatedContainer>
         </section>
       </div>
     </div>
