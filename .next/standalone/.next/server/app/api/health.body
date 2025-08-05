@@ -1,0 +1,1 @@
+{"status":"healthy","timestamp":"2025-08-05T01:37:23.810Z","uptime":0.255527583,"environment":"production","version":"0.1.0","services":{"api":"operational","standings":"operational"}}
