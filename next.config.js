@@ -11,12 +11,12 @@ const nextConfig = {
   // Use the correct configuration key for external packages
   serverExternalPackages: [],
 
-  // Use 'standalone' output for cPanel hosting (better SSR support)
-  output: 'standalone',
+  // Use 'export' output for static file hosting on cPanel
+  output: 'export',
 
-  // Enable image optimization for cPanel hosting
+  // Disable image optimization for static export
   images: {
-    unoptimized: false,
+    unoptimized: true,
   },
 
   // Re-enable webpack cache for better build performance

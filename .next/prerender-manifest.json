@@ -29,12 +29,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/favicon.ico": {
-      "initialHeaders": {
-        "cache-control": "public, max-age=0, must-revalidate",
-        "content-type": "image/x-icon",
-        "x-next-cache-tags": "_N_T_/layout,_N_T_/favicon.ico/layout,_N_T_/favicon.ico/route,_N_T_/favicon.ico"
-      },
+    "/about": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -47,8 +42,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/favicon.ico",
-      "dataRoute": null,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -82,7 +77,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/blog/safety-commands-etiquette": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -95,8 +90,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/blog/safety-commands-etiquette",
+      "dataRoute": "/blog/safety-commands-etiquette.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -106,7 +101,12 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog/equipment-recommendations": {
+    "/favicon.ico": {
+      "initialHeaders": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/x-icon",
+        "x-next-cache-tags": "_N_T_/layout,_N_T_/favicon.ico/layout,_N_T_/favicon.ico/route,_N_T_/favicon.ico"
+      },
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -119,8 +119,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/blog/equipment-recommendations",
-      "dataRoute": "/blog/equipment-recommendations.rsc",
+      "srcRoute": "/favicon.ico",
+      "dataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/bolt-gun-points-race": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/bolt-gun-points-race",
+      "dataRoute": "/bolt-gun-points-race.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/points-race": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/points-race",
+      "dataRoute": "/points-race.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -178,54 +226,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/points-race": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/points-race",
-      "dataRoute": "/points-race.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/bolt-gun-points-race": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/bolt-gun-points-race",
-      "dataRoute": "/bolt-gun-points-race.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/blog/training-techniques": {
       "experimentalBypassFor": [
         {
@@ -274,7 +274,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog/safety-commands-etiquette": {
+    "/blog/equipment-recommendations": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -287,8 +287,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/blog/safety-commands-etiquette",
-      "dataRoute": "/blog/safety-commands-etiquette.rsc",
+      "srcRoute": "/blog/equipment-recommendations",
+      "dataRoute": "/blog/equipment-recommendations.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
