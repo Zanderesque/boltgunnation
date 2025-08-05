@@ -82,6 +82,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/equipment-recommendations": {
       "experimentalBypassFor": [
         {
@@ -106,7 +130,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -119,8 +143,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -154,30 +178,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog/training-techniques": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog/training-techniques",
-      "dataRoute": "/blog/training-techniques.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/points-race": {
       "experimentalBypassFor": [
         {
@@ -193,30 +193,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/points-race",
       "dataRoute": "/points-race.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -250,7 +226,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/blog/training-techniques": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -263,8 +239,32 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "srcRoute": "/blog/training-techniques",
+      "dataRoute": "/blog/training-techniques.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog",
+      "dataRoute": "/blog.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -302,8 +302,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "61d7bd9d52d1bd20f2e27067a8600d1a",
-    "previewModeSigningKey": "588696d22bfee5d892b551ce5dc02ae381c75365b32fefd6390b42b3fcd01927",
-    "previewModeEncryptionKey": "6e047e9381910122db331ddaef883e61f338c457367a4f417e03f019df68f2bb"
+    "previewModeId": "5e75b02652e40ea32025cb908cde93f0",
+    "previewModeSigningKey": "f27018e61f3cc765a17630abde1f447e5d6ec2ce4abb0f50cd4f41f77ea448f9",
+    "previewModeEncryptionKey": "8a0cf98701d5b31f19e8e574eaf423b24a835a935d7e6d8667605b9c32438fe0"
   }
 }

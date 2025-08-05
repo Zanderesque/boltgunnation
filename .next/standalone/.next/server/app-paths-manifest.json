@@ -1,16 +1,16 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/standings/route": "app/api/standings/route.js",
   "/api/health/route": "app/api/health/route.js",
+  "/api/standings/route": "app/api/standings/route.js",
   "/page": "app/page.js",
   "/points-race/page": "app/points-race/page.js",
-  "/blog/equipment-recommendations/page": "app/blog/equipment-recommendations/page.js",
-  "/about/page": "app/about/page.js",
-  "/blog/page": "app/blog/page.js",
   "/blog/hello-world/page": "app/blog/hello-world/page.js",
+  "/blog/equipment-recommendations/page": "app/blog/equipment-recommendations/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/about/page": "app/about/page.js",
   "/blog/safety-commands-etiquette/page": "app/blog/safety-commands-etiquette/page.js",
   "/blog/training-techniques/page": "app/blog/training-techniques/page.js",
-  "/bolt-gun-points-race/page": "app/bolt-gun-points-race/page.js",
-  "/sponsors/page": "app/sponsors/page.js"
+  "/sponsors/page": "app/sponsors/page.js",
+  "/bolt-gun-points-race/page": "app/bolt-gun-points-race/page.js"
 }

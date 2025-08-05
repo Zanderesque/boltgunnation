@@ -17,13 +17,6 @@
       "static/chunks/874-f9ef3c2f1271f935.js",
       "static/chunks/app/layout-cb58b432ced85f19.js"
     ],
-    "/api/standings/route": [
-      "static/chunks/webpack-f10db5eeef251b15.js",
-      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
-      "static/chunks/964-99adfd997340ec4c.js",
-      "static/chunks/main-app-abe651c9b6a9f60c.js",
-      "static/chunks/app/api/standings/route-accac4e1ffdf9378.js"
-    ],
     "/api/health/route": [
       "static/chunks/webpack-f10db5eeef251b15.js",
       "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
@@ -31,21 +24,35 @@
       "static/chunks/main-app-abe651c9b6a9f60c.js",
       "static/chunks/app/api/health/route-accac4e1ffdf9378.js"
     ],
+    "/api/standings/route": [
+      "static/chunks/webpack-f10db5eeef251b15.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-99adfd997340ec4c.js",
+      "static/chunks/main-app-abe651c9b6a9f60c.js",
+      "static/chunks/app/api/standings/route-accac4e1ffdf9378.js"
+    ],
     "/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
       "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
       "static/chunks/964-99adfd997340ec4c.js",
       "static/chunks/main-app-abe651c9b6a9f60c.js",
-      "static/chunks/617-8bb6bd4b8ea5c931.js",
-      "static/chunks/app/page-cf7e6af011f13f71.js"
+      "static/chunks/201-e6a93f5fe56486a4.js",
+      "static/chunks/app/page-b0f4dbede64b74d4.js"
     ],
     "/points-race/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
       "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
       "static/chunks/964-99adfd997340ec4c.js",
       "static/chunks/main-app-abe651c9b6a9f60c.js",
-      "static/chunks/617-8bb6bd4b8ea5c931.js",
-      "static/chunks/app/points-race/page-e77e875f7bf2cbee.js"
+      "static/chunks/201-e6a93f5fe56486a4.js",
+      "static/chunks/app/points-race/page-22d238ec779fdf9b.js"
+    ],
+    "/blog/hello-world/page": [
+      "static/chunks/webpack-f10db5eeef251b15.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-99adfd997340ec4c.js",
+      "static/chunks/main-app-abe651c9b6a9f60c.js",
+      "static/chunks/app/blog/hello-world/page-accac4e1ffdf9378.js"
     ],
     "/blog/equipment-recommendations/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
@@ -53,13 +60,6 @@
       "static/chunks/964-99adfd997340ec4c.js",
       "static/chunks/main-app-abe651c9b6a9f60c.js",
       "static/chunks/app/blog/equipment-recommendations/page-accac4e1ffdf9378.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack-f10db5eeef251b15.js",
-      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
-      "static/chunks/964-99adfd997340ec4c.js",
-      "static/chunks/main-app-abe651c9b6a9f60c.js",
-      "static/chunks/app/about/page-accac4e1ffdf9378.js"
     ],
     "/blog/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
@@ -69,12 +69,12 @@
       "static/chunks/874-f9ef3c2f1271f935.js",
       "static/chunks/app/blog/page-0593cfcd636207e4.js"
     ],
-    "/blog/hello-world/page": [
+    "/about/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
       "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
       "static/chunks/964-99adfd997340ec4c.js",
       "static/chunks/main-app-abe651c9b6a9f60c.js",
-      "static/chunks/app/blog/hello-world/page-accac4e1ffdf9378.js"
+      "static/chunks/app/about/page-accac4e1ffdf9378.js"
     ],
     "/blog/safety-commands-etiquette/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
@@ -90,13 +90,6 @@
       "static/chunks/main-app-abe651c9b6a9f60c.js",
       "static/chunks/app/blog/training-techniques/page-accac4e1ffdf9378.js"
     ],
-    "/bolt-gun-points-race/page": [
-      "static/chunks/webpack-f10db5eeef251b15.js",
-      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
-      "static/chunks/964-99adfd997340ec4c.js",
-      "static/chunks/main-app-abe651c9b6a9f60c.js",
-      "static/chunks/app/bolt-gun-points-race/page-accac4e1ffdf9378.js"
-    ],
     "/sponsors/page": [
       "static/chunks/webpack-f10db5eeef251b15.js",
       "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
@@ -104,6 +97,13 @@
       "static/chunks/main-app-abe651c9b6a9f60c.js",
       "static/chunks/63-a66517b7b1c5f7af.js",
       "static/chunks/app/sponsors/page-f06e4f89ba38091f.js"
+    ],
+    "/bolt-gun-points-race/page": [
+      "static/chunks/webpack-f10db5eeef251b15.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-99adfd997340ec4c.js",
+      "static/chunks/main-app-abe651c9b6a9f60c.js",
+      "static/chunks/app/bolt-gun-points-race/page-accac4e1ffdf9378.js"
     ]
   }
 }

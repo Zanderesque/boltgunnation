@@ -14,7 +14,7 @@
 /coverage
 
 # next.js
-/.next/
+# /.next/  # Commented out to allow committing build files for cPanel deployment
 /out/
 
 # production
