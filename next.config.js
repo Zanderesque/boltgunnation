@@ -11,19 +11,19 @@ const nextConfig = {
   // Use the correct configuration key for external packages
   serverExternalPackages: [],
 
-  // Change from 'standalone' to 'export' for Cloudflare Pages
-  output: 'export',
+  // Use 'standalone' output for cPanel hosting (better SSR support)
+  output: 'standalone',
 
-  // Disable image optimization to reduce build size
+  // Enable image optimization for cPanel hosting
   images: {
-    unoptimized: true,
+    unoptimized: false,
   },
 
-  // Disable webpack cache to avoid large files
+  // Re-enable webpack cache for better build performance
   webpack: (config, { dev, isServer }) => {
-    // Disable persistent caching for production builds
+    // Enable persistent caching for production builds
     if (!dev) {
-      config.cache = false;
+      config.cache = true;
     }
 
     return config;

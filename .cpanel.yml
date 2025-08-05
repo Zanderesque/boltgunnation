@@ -1,0 +1,23 @@
+---
+deployment:
+  tasks:
+    # Set deployment path to the public_html directory (adjust this path as needed for your cPanel account)
+    - export DEPLOYPATH=/home/boltgun/public_html/
+    
+    # Build the Next.js application
+    - export NODE_ENV=production
+    - /usr/local/bin/npm install
+    - /usr/local/bin/npm run build
+    
+    # Deploy the built application
+    # For standalone output (SSR support)
+    - /bin/cp -R .next/standalone/. $DEPLOYPATH
+    - /bin/cp -R .next/static $DEPLOYPATH/.next/
+    - /bin/cp -R public/. $DEPLOYPATH/public/
+    
+    # Copy package.json for potential server-side dependencies
+    - /bin/cp package.json $DEPLOYPATH
+    
+    # Additional deployment commands can be added here
+    # For example, to set proper permissions:
+    # - /bin/chmod 755 $DEPLOYPATH
